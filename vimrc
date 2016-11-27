@@ -1,9 +1,43 @@
+set nocp  " behave on bsds
+filetype off
+set encoding=utf8
+set bs=2
+
 syntax on
-set softtabstop=2 shiftwidth=2 expandtab
+let python_hilight_all=1
+set softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
 set cc=80 " colored ruler at 80 chars
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-set nocp  " behave on bsds
+set background=dark
+" enable docstrings for folded code
+let g:SimpylFold_docstring_preview=1
+
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4 |
+"    \ set softtabstop=4 |
+"    \ set shiftwidth=4 |
+"    \ set textwidth=79 |
+"    \ set expandtab |
+"    \ set autoindent |
+"    \ set fileformat=unix
+
 set ruler
 set showmode
 set number
+set mouse+=a
 
+"set foldmethod=indent
+"set foldlevel=99
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tmhedberg/SimpylFold'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Bundle 'altercation/vim-colors-solarized'
+"Plugin 'gituser/gitrepo'
+call vundle#end()
+filetype plugin indent on
+colorscheme solarized
