@@ -2,6 +2,7 @@ set nocp  " behave on bsds
 filetype off
 set encoding=utf8
 set bs=2
+set clipboard=unnamed
 
 syntax on
 let python_hilight_all=1
@@ -37,6 +38,7 @@ Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'rodjek/vim-puppet'
 "Plugin 'gituser/gitrepo'
 call vundle#end()
 filetype plugin indent on
