@@ -1,3 +1,5 @@
 xsetroot -solid \#400010
+urxvtd &
+redshift -O 4200
 xscreensaver -no-splash &
 ssh-agent .cabal/bin/xmonad

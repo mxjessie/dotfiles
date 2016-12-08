@@ -22,6 +22,8 @@ add_to_path $HOME/bin
 add_to_path $HOME/.cabal/bin
 add_to_path $HOME/.local/bin
 
+export EDITOR="vim"
+
 setopt APPEND_HISTORY          # append rather than overwrite history file.
 HISTSIZE=1200                  # lines of history to maintain memory
 SAVEHIST=1000                  # lines of history to maintain in history file.
