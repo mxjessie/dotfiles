@@ -1,0 +1,3 @@
+xsetroot -solid \#400010
+xscreensaver -no-splash &
+ssh-agent .cabal/bin/xmonad
