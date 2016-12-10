@@ -18,9 +18,16 @@ func add_to_path() {
     fi
 }
 
+func source_this() {
+    if [[ -a "$1" ]]; then
+        source $1
+    fi
+}
+
 add_to_path $HOME/bin
 add_to_path $HOME/.cabal/bin
 add_to_path $HOME/.local/bin
+source_this /usr/local/bin/aws_zsh_completer.sh
 
 export EDITOR="vim"
 
