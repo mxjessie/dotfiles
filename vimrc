@@ -39,7 +39,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'rodjek/vim-puppet'
-"Plugin 'gituser/gitrepo'
 call vundle#end()
 filetype plugin indent on
+au BufRead,BufNewFile *.pp setfiletype puppet
 colorscheme solarized
