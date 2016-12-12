@@ -27,6 +27,7 @@ func source_this() {
 add_to_path $HOME/bin
 add_to_path $HOME/.cabal/bin
 add_to_path $HOME/.local/bin
+add_to_path $HOME/.rvm/bin
 source_this /usr/local/bin/aws_zsh_completer.sh
 
 export EDITOR="vim"
