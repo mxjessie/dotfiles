@@ -1,0 +1,1 @@
+/usr/bin/jackd -v -dalsa -dhw:H6 -r96000 -p1024 -n3
