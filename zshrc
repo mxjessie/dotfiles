@@ -8,15 +8,9 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # much, much faster.
     # DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
-    plugins=(git ruby pep8 pylint python colorize)
+    plugins=(git ruby pep8 pylint python colorize vagrant)
     source $ZSH/oh-my-zsh.sh
 fi
-
-func add_to_path() {
-    if [[ -a "$1" ]]; then
-        export PATH="$1":$PATH
-    fi
-}
 
 func source_this() {
     if [[ -a "$1" ]]; then
@@ -24,13 +18,11 @@ func source_this() {
     fi
 }
 
-add_to_path $HOME/bin
-add_to_path $HOME/.cabal/bin
-add_to_path $HOME/.local/bin
-add_to_path $HOME/.gem/ruby/2.3.0/bin 
 source_this /usr/local/bin/aws_zsh_completer.sh
 
-export EDITOR="vim"
+if `which lolcat > /dev/null`; then
+    alias lsd="ls -hal | lolcat"
+fi
 
 setopt APPEND_HISTORY          # append rather than overwrite history file.
 HISTSIZE=1200                  # lines of history to maintain memory
