@@ -20,12 +20,25 @@ func source_this() {
 
 source_this /usr/local/bin/aws_zsh_completer.sh
 
+# command line jack enhancements
+if `which jack_connect > /dev/null`; then
+    source_this ~/dotfiles/zsh-jack-completion/zsh-jack-completion.sh
+    alias jc="jack_connect"
+    alias jd="jack_disconnect"
+fi
+
+# whoa dude
 if `which lolcat > /dev/null`; then
     alias lsd="ls -hal | lolcat"
 fi
 
-setopt APPEND_HISTORY          # append rather than overwrite history file.
-HISTSIZE=1200                  # lines of history to maintain memory
-SAVEHIST=1000                  # lines of history to maintain in history file.
-setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
-setopt EXTENDED_HISTORY        # save timestamp and runtime information
+# append rather than overwrite history file.
+setopt APPEND_HISTORY
+# lines of history to maintain in memory
+HISTSIZE=1200                  
+# lines of history to maintain in histfile
+SAVEHIST=1000
+# allow dups, but expire old dups first
+setopt HIST_EXPIRE_DUPS_FIRST
+# save timestamp & runtime info
+setopt EXTENDED_HISTORY

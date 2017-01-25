@@ -7,3 +7,6 @@
 [submodule "Vundle.vim"]
 	path = Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "zsh-jack-completion"]
+	path = zsh-jack-completion
+	url = https://github.com/wrl/zsh-jack-completion
