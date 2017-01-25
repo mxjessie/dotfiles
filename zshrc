@@ -22,7 +22,7 @@ source_this /usr/local/bin/aws_zsh_completer.sh
 
 # command line jack enhancements
 if `which jack_connect > /dev/null`; then
-    source_this ~/dotfiles/zsh-jack-completion/zsh-jack-completion.sh
+    source_this ~/dotfiles/zsh-jack-completion/zsh_jack_completion.sh
     alias jc="jack_connect"
     alias jd="jack_disconnect"
 fi
