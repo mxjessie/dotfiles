@@ -1,1 +1,0 @@
-/home/jessie/dotfiles/ipython_config.py
