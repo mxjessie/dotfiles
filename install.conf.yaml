@@ -21,6 +21,7 @@
     ~/.Xsession: 
     ~/.jackdrc:
     ~/.ipython/profile_default/ipython_config.py: ipython_config.py
+    ~/.config/i3/config: i3rc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
