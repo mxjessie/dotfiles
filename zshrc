@@ -19,6 +19,7 @@ func source_this() {
 }
 
 source_this /usr/local/bin/aws_zsh_completer.sh
+source_this $HOME/.sdkman/bin/sdkman-init.sh
 
 # command line jack enhancements
 if `which jack_connect > /dev/null`; then
