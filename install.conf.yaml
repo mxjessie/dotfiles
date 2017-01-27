@@ -8,14 +8,12 @@
 - link:
     ~/.vim/bundle/Vundle.vim:
         create: true
-        force: true
         path: Vundle.vim
     ~/.vimrc:
     ~/.zshrc:
     ~/.zshenv:
     ~/.oh-my-zsh:
         create: true
-        force: true
         path: oh-my-zsh
     ~/.gitconfig:
     ~/.Xsession: 
@@ -29,7 +27,9 @@
     ~/.config/i3/config:
         create: true
         path: i3rc
-
+    ~/.config/xfce4/terminal/terminalrc:
+        create: true
+        path: xfce4-terminalrc
 
 
 - shell:
