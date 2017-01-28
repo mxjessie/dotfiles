@@ -10,6 +10,9 @@
         create: true
         path: Vundle.vim
     ~/.vimrc:
+    ~/.config/nvim/init.vim:
+        create: true
+        path: vimrc
     ~/.zshrc:
     ~/.zshenv:
     ~/.oh-my-zsh:
