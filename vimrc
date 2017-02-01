@@ -41,5 +41,19 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'rodjek/vim-puppet'
 call vundle#end()
 filetype plugin indent on
-au BufRead,BufNewFile *.pp setfiletype puppet
+au BufRead,BufNewFile *.pp set ft=puppet
 colorscheme solarized
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 3
+
+" this would be nice to have but errors due to encoding reasons (?)
+" let g:syntastic_error_symbol = "\u1F4A5\u2717"
+" let g:syntastic_warning_symbol = "\u1F4A5\u26A0"
+" let g:syntastic_style_error_symbol = "\u2728\u2717"
+" let g:syntastic_style_warming_symbol = "\u2728\u26A0"
