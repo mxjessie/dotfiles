@@ -1,15 +1,32 @@
-set nocp  " behave on bsds
+set nocp  " be youw twue sewf
 filetype off
-set encoding=utf8
-set bs=2
-set clipboard=unnamed
+filetype plugin indent off
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'scrooloose/syntastic'
+Bundle 'altercation/vim-colors-solarized'
+Plugin 'nvie/vim-flake8'
+Bundle 'rodjek/vim-puppet'
+Bundle 'nathanielc/vim-tickscript' 
+Plugin 'VundleVim/Vundle.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-unimpaired'
+call vundle#end()
+
+filetype plugin indent on
 syntax on
-let python_hilight_all=1
-set softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-set cc=80 " colored ruler at 80 chars
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set background=dark
+let python_hilight_all=1
+colorscheme solarized
+
+set encoding=utf8
+set bs=2
+" set clipboard=unnamed
+set softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
+set cc=80 " colored ruler at 80 chars
 " enable docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
@@ -29,31 +46,17 @@ set mouse+=a
 
 "set foldmethod=indent
 "set foldlevel=99
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Bundle 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'rodjek/vim-puppet'
-call vundle#end()
-filetype plugin indent on
 au BufRead,BufNewFile *.pp set ft=puppet
-colorscheme solarized
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 3
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_loc_list_height = 3
 
-" this would be nice to have but errors due to encoding reasons (?)
-" let g:syntastic_error_symbol = "\u1F4A5\u2717"
-" let g:syntastic_warning_symbol = "\u1F4A5\u26A0"
-" let g:syntastic_style_error_symbol = "\u2728\u2717"
-" let g:syntastic_style_warming_symbol = "\u2728\u26A0"
+let g:syntastic_error_symbol = "💥"
+let g:syntastic_warning_symbol = "🚫"
+let g:syntastic_style_error_symbol = "🆖"
+let g:syntastic_style_warming_symbol = "👎"
