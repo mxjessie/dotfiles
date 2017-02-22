@@ -1,3 +1,6 @@
 [user]
-	name = Jessie
-	email = mxjessie@users.noreply.github.com
+    name = Jessie
+    email = mxjessie@users.noreply.github.com
+
+[include]
+    path = ~/.gitconfig-work

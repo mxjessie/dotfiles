@@ -28,6 +28,11 @@ if `which jack_connect > /dev/null`; then
     alias jd="jack_disconnect"
 fi
 
+# rbenv pls
+if `which rbenv > /dev/null`; then
+    eval "$(rbenv init -)"
+fi
+
 # whoa dude
 if `which lolcat > /dev/null`; then
     alias lsd="ls -hal | lolcat"
