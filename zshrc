@@ -33,6 +33,11 @@ if `which rbenv > /dev/null`; then
     eval "$(rbenv init -)"
 fi
 
+# git % github = hub https://hub.github.com
+if `which hub > /dev/null`; then
+    alias git=hub
+fi
+
 # whoa dude
 if `which lolcat > /dev/null`; then
     alias lsd="ls -hal | lolcat"
