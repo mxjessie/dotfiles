@@ -1,12 +1,19 @@
 [submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
+    path = dotbot
+    ignore = all
+    url = https://github.com/anishathalye/dotbot
+     
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+    path = oh-my-zsh
+    ignore = all
+    url = https://github.com/robbyrussell/oh-my-zsh.git
+
 [submodule "Vundle.vim"]
-	path = Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
+    path = Vundle.vim
+    ignore = all
+    url = https://github.com/VundleVim/Vundle.vim.git
+
 [submodule "zsh-jack-completion"]
-	path = zsh-jack-completion
-	url = https://github.com/wrl/zsh-jack-completion
+    path = zsh-jack-completion
+    ignore = all
+    url = https://github.com/wrl/zsh-jack-completion
