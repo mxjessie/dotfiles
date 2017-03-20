@@ -18,30 +18,43 @@ func source_this() {
     fi
 }
 
+func cmd_exists() {
+    # i feel like there might be a better way to do this
+    if `which "$1" > /dev/null`; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 source_this /usr/local/bin/aws_zsh_completer.sh
 source_this $HOME/Library/Python/3.6/bin/aws_zsh_completer.sh
 source_this $HOME/.sdkman/bin/sdkman-init.sh
 
 # command line jack enhancements
-if `which jack_connect > /dev/null`; then
+if cmd_exists 'jack_connect'; then
     source_this ~/dotfiles/zsh-jack-completion/zsh_jack_completion.sh
     alias jc="jack_connect"
     alias jd="jack_disconnect"
 fi
 
 # rbenv pls
-if `which rbenv > /dev/null`; then
-    eval "$(rbenv init -)"
-fi
+if cmd_exists 'rbenv'; then eval "$(rbenv init -)"; fi
 
 # git % github = hub https://hub.github.com
-if `which hub > /dev/null`; then
-    alias git=hub
-fi
+if cmd_exists 'hub'; then alias git=hub; fi
 
 # whoa dude
-if `which lolcat > /dev/null`; then
-    alias lsd="ls -hal | lolcat"
+if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat"; fi
+
+# if gpg exists, start an agent or load existing agent settings
+if cmd_exists 'gpg-agent'; then
+    [ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+    if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+        export GPG_AGENT_INFO
+    else
+        eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+    fi
 fi
 
 # append rather than overwrite history file.
@@ -49,7 +62,7 @@ setopt APPEND_HISTORY
 # lines of history to maintain in memory
 HISTSIZE=1200                  
 # lines of history to maintain in histfile
-SAVEHIST=1000
+SAVEHIST=100000
 # allow dups, but expire old dups first
 setopt HIST_EXPIRE_DUPS_FIRST
 # save timestamp & runtime info
