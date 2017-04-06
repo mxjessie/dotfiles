@@ -2,7 +2,6 @@
     link:
         relink: true
 
-
 - clean: ['~']
 
 - link:
@@ -33,7 +32,9 @@
     ~/.config/xfce4/terminal/terminalrc:
         create: true
         path: xfce4-terminalrc
-
+    ~/.gnupg/gpg-agent.conf:
+        create: true
+        path: gpg-agent.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
