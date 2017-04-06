@@ -8,7 +8,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # much, much faster.
     # DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
-    plugins=(git ruby pep8 pylint python colorize vagrant)
+    plugins=(git ruby pep8 pylint python colorize vagrant gpg-agent)
     source $ZSH/oh-my-zsh.sh
 fi
 
@@ -47,16 +47,6 @@ if cmd_exists 'hub'; then alias git=hub; fi
 
 # whoa dude
 if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat"; fi
-
-# if gpg exists, start an agent or load existing agent settings
-if cmd_exists 'gpg-agent'; then
-    [ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-    if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-        export GPG_AGENT_INFO
-    else
-        eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
-    fi
-fi
 
 # append rather than overwrite history file.
 setopt APPEND_HISTORY

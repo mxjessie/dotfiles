@@ -2,4 +2,4 @@ urxvtd &
 redshift -O 4200
 xscreensaver -no-splash &
 compton -fD 5 &
-ssh-agent i3
+ssh-agent xfce4-session
