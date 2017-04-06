@@ -4,9 +4,11 @@ filetype plugin indent off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'scrooloose/NerdTree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'nvie/vim-flake8'
 Bundle 'rodjek/vim-puppet'
 Bundle 'nathanielc/vim-tickscript' 
@@ -53,11 +55,22 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" syntastic
 let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_loc_list_height = 3
-
 let g:syntastic_error_symbol = "💥"
 let g:syntastic_warning_symbol = "🚫"
 let g:syntastic_style_error_symbol = "🆖"
-let g:syntastic_style_warming_symbol = "👎"
+let g:syntastic_style_warning_symbol = "👎"
+
+" powerline: always visible
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
+
+" nerdtree: ^n to toggle, start if vim started w/o filename
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif

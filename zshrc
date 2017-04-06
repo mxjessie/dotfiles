@@ -30,6 +30,7 @@ func cmd_exists() {
 source_this /usr/local/bin/aws_zsh_completer.sh
 source_this $HOME/Library/Python/3.6/bin/aws_zsh_completer.sh
 source_this $HOME/.sdkman/bin/sdkman-init.sh
+source_this $HOME/.zshrc-work
 
 # command line jack enhancements
 if cmd_exists 'jack_connect'; then
