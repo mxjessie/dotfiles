@@ -65,9 +65,9 @@ let g:syntastic_style_error_symbol = "🆖"
 let g:syntastic_style_warning_symbol = "👎"
 
 " powerline: always visible
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 set laststatus=2
 
 " nerdtree: ^n to toggle, start if vim started w/o filename
