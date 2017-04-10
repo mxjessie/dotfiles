@@ -64,11 +64,18 @@ let g:syntastic_warning_symbol = "🚫"
 let g:syntastic_style_error_symbol = "🆖"
 let g:syntastic_style_warning_symbol = "👎"
 
-" powerline: always visible
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-set laststatus=2
+" use python3 or python2 powerline
+if has('python3')
+  python3 from powerline.vim import setup as powerline_setup
+  python3 powerline_setup()
+  python3 del powerline_setup
+  set laststatus=2
+elseif has('python')
+  python from powerline.vim import setup as powerline_setup
+  python powerline_setup()
+  python del powerline_setup
+  set laststatus=2
+endif
 
 " nerdtree: ^n to toggle, start if vim started w/o filename
 map <C-n> :NERDTreeToggle<CR>
