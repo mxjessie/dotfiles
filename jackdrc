@@ -1,1 +1,1 @@
-/usr/bin/jackd -dalsa -dhw:VSL -r96000 -p512 -n3 -S -Xseq
+/usr/bin/jackd -dalsa -dhw:VSL -r48000 -p128 -n3 -S
