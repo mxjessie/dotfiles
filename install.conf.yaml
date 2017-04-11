@@ -35,6 +35,9 @@
     ~/.gnupg/gpg-agent.conf:
         create: true
         path: gpg-agent.conf
+    ~/.config/redshift.conf:
+        create: true
+        path: redshift.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -51,6 +51,8 @@ set mouse+=a
 "set foldlevel=99
 au BufRead,BufNewFile *.pp set ft=puppet
 
+au BufRead,BufNewFile */diary/*.wiki set spell
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
