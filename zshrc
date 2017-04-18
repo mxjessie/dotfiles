@@ -8,7 +8,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # much, much faster.
     # DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
-    plugins=(git ruby pep8 pylint python colorize vagrant gpg-agent)
+    plugins=(git ruby pep8 pylint python colorize vagrant gpg-agent ssh-agent)
     source $ZSH/oh-my-zsh.sh
 fi
 
