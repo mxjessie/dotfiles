@@ -32,6 +32,9 @@ source_this $HOME/Library/Python/3.6/bin/aws_zsh_completer.sh
 source_this $HOME/.sdkman/bin/sdkman-init.sh
 source_this $HOME/.zshrc-work
 
+# do the vte thing to make tilix work more good
+source_this /etc/profile.d/vte.sh
+
 # command line jack enhancements
 if cmd_exists 'jack_connect'; then
     source_this ~/dotfiles/zsh-jack-completion/zsh_jack_completion.sh
