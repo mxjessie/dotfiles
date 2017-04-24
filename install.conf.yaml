@@ -10,6 +10,7 @@
         path: Vundle.vim
     ~/.vimrc:
     ~/.rspec:
+    ~/.tmux.conf:
     ~/.config/nvim/init.vim:
         create: true
         path: vimrc

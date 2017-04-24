@@ -1,3 +1,6 @@
+[core]
+    pager = less -SR
+
 [user]
     name = Jessie
     email = mxjessie@users.noreply.github.com
@@ -5,12 +8,21 @@
 [include]
     path = ~/.gitconfig-work
 
+[merge]
+    conflictstyle = diff3
+
 [color]
     interactive = true
     branch = true
     status = true
 
 [alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --oneline --graph --decorate
     # git change-commits GIT_COMMITTER_{NAME,EMAIL} "old name" "new name"
     change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
 
