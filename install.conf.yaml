@@ -9,6 +9,7 @@
         create: true
         path: Vundle.vim
     ~/.vimrc:
+    ~/.rspec:
     ~/.config/nvim/init.vim:
         create: true
         path: vimrc
