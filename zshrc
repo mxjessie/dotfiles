@@ -42,6 +42,14 @@ if cmd_exists 'jack_connect'; then
     alias jd="jack_disconnect"
 fi
 
+# vimwiki aliases
+VIMWIKI_PATH="$HOME/vimwiki"
+if [[ -a "$HOME/vimwiki" ]]; then
+    alias diary="vim $VIMWIKI_PATH/diary/`date +%Y-%m-%d`.wiki"
+    alias diaryindex="vim $VIMWIKI_PATH/diary/diary.wiki"
+    alias wiki="vim $VIMWIKI_PATH/index.wiki"
+fi
+
 # rbenv pls
 if cmd_exists 'rbenv'; then eval "$(rbenv init -)"; fi
 

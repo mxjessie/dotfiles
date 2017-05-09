@@ -5,41 +5,42 @@
 - clean: ['~']
 
 - link:
-    ~/.vim/bundle/Vundle.vim:
-        create: true
-        path: Vundle.vim
-    ~/.vimrc:
-    ~/.rspec:
-    ~/.tmux.conf:
-    ~/.config/nvim/init.vim:
-        create: true
-        path: vimrc
-    ~/.zshrc:
-    ~/.zshenv:
-    ~/.oh-my-zsh:
-        create: true
-        path: oh-my-zsh
-    ~/.gitconfig:
-    ~/.Xsession: 
-    ~/.jackdrc:
-    ~/.config/pulse/client.conf: 
-        create: true
-        path: pulse-client.conf
-    ~/.ipython/profile_default/ipython_config.py:
-        create: true
-        path: ipython_config.py
     ~/.config/i3/config:
         create: true
         path: i3rc
-    ~/.config/xfce4/terminal/terminalrc:
+    ~/.config/nvim/init.vim:
         create: true
-        path: xfce4-terminalrc
-    ~/.gnupg/gpg-agent.conf:
+        path: vimrc
+    ~/.config/pulse/client.conf: 
         create: true
-        path: gpg-agent.conf
+        path: pulse-client.conf
     ~/.config/redshift.conf:
         create: true
         path: redshift.conf
+    ~/.config/xfce4/terminal/terminalrc:
+        create: true
+        path: xfce4-terminalrc
+    ~/.gitconfig:
+    ~/.gnupg/gpg-agent.conf:
+        create: true
+        path: gpg-agent.conf
+    ~/.ipython/profile_default/ipython_config.py:
+        create: true
+        path: ipython_config.py
+    ~/.jackdrc:
+    ~/.oh-my-zsh:
+        create: true
+        path: oh-my-zsh
+    ~/.pryrc:
+    ~/.rspec:
+    ~/.tmux.conf:
+    ~/.vimrc:
+    ~/.vim/bundle/Vundle.vim:
+        create: true
+        path: Vundle.vim
+    ~/.Xsession: 
+    ~/.zshrc:
+    ~/.zshenv:
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
