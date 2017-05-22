@@ -42,6 +42,11 @@ if cmd_exists 'jack_connect'; then
     alias jd="jack_disconnect"
 fi
 
+# not sure if this will drive me nuts or not but here goes
+if cmd_exists 'task'; then
+    task next
+fi
+
 # vimwiki aliases
 VIMWIKI_PATH="$HOME/vimwiki"
 if [[ -a "$HOME/vimwiki" ]]; then
