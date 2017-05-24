@@ -61,6 +61,12 @@ if cmd_exists 'rbenv'; then eval "$(rbenv init -)"; fi
 # git % github = hub https://hub.github.com
 if cmd_exists 'hub'; then alias git=hub; fi
 
+if cmd_exists 'git'; then
+    alias git-sanitize='
+    git config --local user.name "Jessie";
+    git config --local user.email "mxjessie@users.noreply.github.com"'
+fi
+
 # whoa dude
 if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat"; fi
 
