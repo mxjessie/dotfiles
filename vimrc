@@ -4,18 +4,18 @@ set nocp  " be youw twue sewf
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
-Bundle 'nathanielc/vim-tickscript' 
+Plugin 'nathanielc/vim-tickscript' 
 Plugin 'nvie/vim-flake8'
-Bundle 'rodjek/vim-puppet'
+Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/NerdTree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'vimwiki/vimwiki'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vimwiki/vimwiki'
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 
@@ -42,10 +42,9 @@ set mouse+=a
 set autochdir " automatically change cwd to file in buffer
 
 " filetype configs
-au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-au BufRead,BufNewFile *.pp set ft=puppet
-au BufRead,BufNewFile */diary/*.wiki set spell
-"au BufNewFile,BufRead *.py
+autocmd FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd BufRead,BufNewFile *.pp set ft=puppet
+"autocmd BufNewFile,BufRead *.py
 "    \ set tabstop=4 |
 "    \ set softtabstop=4 |
 "    \ set shiftwidth=4 |
@@ -53,6 +52,8 @@ au BufRead,BufNewFile */diary/*.wiki set spell
 "    \ set expandtab |
 "    \ set autoindent |
 "    \ set fileformat=unix
+
+autocmd BufRead,BufNewFile */diary/*.wiki set spell
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -80,9 +81,33 @@ elseif has('python')
   set laststatus=2
 endif
 
-" nerdtree: ^n to toggle, start if vim started w/o filename
-map <C-n> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" nerdtree: ^n to toggle in any mode (noremap means map, but not recursively)
+noremap <C-n> :NERDTreeToggle<CR>
+" don't start if vim started w/o filename
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" pretty json diffing
 command PPJson %!python -m json.tool
+
+" vimwiki
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/'
+let wiki_1.path_html = '~/vimwiki_html/'
+
+" github.io experiment
+let wiki_2 = {}
+let wiki_2.path = '~/site/'
+let wiki_2.path_html = '~/site_html/'
+let wiki_2.template_path = '~/site/templates/'
+let wiki_2.template_default = 'default'
+let wiki_2.template_ext = '.html'
+
+let g:vimwiki_list = [wiki_1, wiki_2]
+
+" open today's journal page if started w/o filename
+if argc() == 0 && !exists("s:std_in")
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * VimwikiMakeDiaryNote
+endif
+
