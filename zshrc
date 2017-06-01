@@ -70,6 +70,9 @@ fi
 # whoa dude
 if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat"; fi
 
+# old tmux muscle memory
+if cmd_exists 'tmux'; then alias atmux='tmux -2u attach'; fi
+
 # append rather than overwrite history file.
 setopt APPEND_HISTORY
 # lines of history to maintain in memory
@@ -80,3 +83,5 @@ SAVEHIST=100000
 setopt HIST_EXPIRE_DUPS_FIRST
 # save timestamp & runtime info
 setopt EXTENDED_HISTORY
+# don't beep
+setopt NO_BEEP
