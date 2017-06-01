@@ -68,7 +68,7 @@ if cmd_exists 'git'; then
 fi
 
 # whoa dude
-if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat"; fi
+if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat -t"; fi
 
 # old tmux muscle memory
 if cmd_exists 'tmux'; then alias atmux='tmux -2u attach'; fi
