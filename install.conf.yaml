@@ -31,6 +31,9 @@
     ~/.oh-my-zsh:
         create: true
         path: oh-my-zsh
+    ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme:
+        create: true
+        path: hostcolor-agnoster.zsh-theme
     ~/.pryrc:
     ~/.rspec:
     ~/.tmux.conf:
