@@ -8,7 +8,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # much, much faster.
     # DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
-    plugins=(colorize git gpg-agent pep8 pylint python ruby ssh-agent taskwarrior vagrant)
+    plugins=(colorize git gpg-agent pep8 pylint python ruby safe-paste ssh-agent taskwarrior vagrant)
     source $ZSH/oh-my-zsh.sh
 fi
 
@@ -27,6 +27,7 @@ func cmd_exists() {
     fi
 }
 
+source_this $HOME/.cargo/env
 source_this /usr/local/bin/aws_zsh_completer.sh
 source_this $HOME/Library/Python/3.6/bin/aws_zsh_completer.sh
 source_this $HOME/.sdkman/bin/sdkman-init.sh

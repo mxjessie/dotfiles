@@ -5,10 +5,12 @@ set nocp  " be youw twue sewf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'cespare/vim-toml'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'nathanielc/vim-tickscript' 
 Plugin 'nvie/vim-flake8'
 Plugin 'rodjek/vim-puppet'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/NerdTree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/SimpylFold'
