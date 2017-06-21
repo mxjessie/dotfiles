@@ -13,6 +13,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/NerdTree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sickill/vim-monokai'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
@@ -23,7 +24,7 @@ call vundle#end()
 
 filetype plugin indent on
 syntax on
-colorscheme solarized
+colorscheme monokai
 set background=dark
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 let python_hilight_all=1
