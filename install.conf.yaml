@@ -30,6 +30,7 @@
     ~/.jackdrc:
     ~/.oh-my-zsh:
         create: true
+        force: true
         path: oh-my-zsh
     ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme:
         create: true
@@ -46,4 +47,4 @@
     ~/.zshenv:
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive --remote, Installing submodules]
