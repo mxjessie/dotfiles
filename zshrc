@@ -19,8 +19,7 @@ func source_this() {
 }
 
 func cmd_exists() {
-    # i feel like there might be a better way to do this
-    if `which "$1" > /dev/null`; then
+    if `which "$1" &>> /dev/null`; then
         return 0
     else
         return 1
