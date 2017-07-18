@@ -8,7 +8,8 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # much, much faster.
     # DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
-    plugins=(colorize git gpg-agent pep8 pylint python ruby safe-paste ssh-agent taskwarrior vagrant)
+    plugins=(colorize git gpg-agent pep8 pylint python ruby safer-paste ssh-agent taskwarrior vagrant)
+    zstyle :omz:plugins:ssh-agent agent-forwarding on
     source $ZSH/oh-my-zsh.sh
 fi
 
