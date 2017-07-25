@@ -168,4 +168,4 @@ assign [class="Claws-mail"] 9
 
 new_window pixel 2
 new_float pixel 2
-hide_edge_borders smart
+hide_edge_borders none
