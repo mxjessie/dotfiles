@@ -34,3 +34,5 @@
 
 - shell:
     - [git submodule update --init --recursive --remote, Installing submodules]
+    - [git submodule foreach git checkout master]
+    - [git submodule foreach git pull --ff-only origin master]
