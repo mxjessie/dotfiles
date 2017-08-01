@@ -1,0 +1,8 @@
+- defaults:
+    link:
+        relink: true
+
+- link:
+    ~/.taskrc:
+        create: true
+        path: private/taskrc-mac

@@ -1,0 +1,20 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/i3/config:
+        create: true
+        path: i3rc
+    ~/.config/pulse/client.conf: 
+        create: true
+        path: pulse-client.conf
+    ~/.config/redshift.conf:
+        create: true
+        path: redshift.conf
+    ~/.config/xfce4/terminal/terminalrc:
+        create: true
+        path: xfce4-terminalrc
+    ~/.jackdrc:

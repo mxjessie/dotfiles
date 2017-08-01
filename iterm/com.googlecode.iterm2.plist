@@ -636,17 +636,17 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 494 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>571 113 606 456 0 0 1920 1200 </string>
+	<string>467 90 606 456 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>264 748 918 381 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>938 54 710 499 0 0 1920 1178 </string>
+	<string>7 529 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>624 120 815 754 0 0 1920 1200 </string>
+	<string>301 454 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>730 412 710 499 0 0 1920 1200 </string>
+	<string>199 88 1270 799 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>867 250 997 874 0 0 1920 1178 </string>
+	<string>867 625 710 499 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>31 679 710 499 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -3956,7 +3956,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-06-30T20:14:05Z</date>
+	<date>2017-07-20T21:27:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3964,7 +3964,7 @@
 	<key>ShowBookmarkName</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
