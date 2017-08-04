@@ -636,21 +636,21 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 494 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>467 90 606 456 0 0 1680 1050 </string>
+	<string>467 90 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>264 748 918 381 0 0 1920 1178 </string>
+	<string>208 455 918 495 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>7 529 710 499 0 0 1680 1028 </string>
+	<string>512 459 610 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>301 454 710 499 0 0 1680 1028 </string>
+	<string>9 527 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>199 88 1270 799 0 0 1680 1028 </string>
+	<string>34 16 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>867 625 710 499 0 0 1920 1178 </string>
+	<string>884 498 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>31 679 710 499 0 0 1920 1178 </string>
+	<string>25 529 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>2326 436 910 649 1920 60 1680 1028 </string>
+	<string>827 125 710 499 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
 	<string>485 389 710 499 0 0 1920 1178 </string>
 	<key>NeverWarnAboutShortLivedSessions_0B964737-1B14-45B7-8206-BF4AB3C5896D</key>
@@ -844,6 +844,8 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blink Allowed</key>
+			<false/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -1241,7 +1243,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Regular 11</string>
+			<string>TerminusTTF 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -1297,6 +1299,8 @@
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
+			<false/>
+			<key>Use HFS Plus Mapping</key>
 			<false/>
 			<key>Use Italic Font</key>
 			<true/>
@@ -3956,7 +3960,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-20T21:27:14Z</date>
+	<date>2017-08-03T00:11:46Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
