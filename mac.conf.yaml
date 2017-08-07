@@ -3,6 +3,6 @@
         relink: true
 
 - link:
-    ~/.taskrc:
+    ~/.taskrc-host:
         create: true
         path: private/taskrc-mac

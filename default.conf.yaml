@@ -24,6 +24,9 @@
         path: hostcolor-agnoster.zsh-theme
     ~/.pryrc:
     ~/.rspec:
+    ~/.taskrc:
+        create: true
+        path: private/taskrc
     ~/.tmux.conf:
     ~/.vimrc:
     ~/.vim/bundle/Vundle.vim:

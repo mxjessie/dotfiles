@@ -18,3 +18,6 @@
         create: true
         path: xfce4-terminalrc
     ~/.jackdrc:
+    ~/.taskrc-host:
+        create: true
+        path: private/taskrc-linux
