@@ -80,9 +80,12 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 # Also: color the 'where' as a hash of the hostname mod 256
 prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     local HOSTCOLOR=$((`hostname -s | sum | awk '{ print $1 }'` % 256))
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER%F{$HOSTCOLOR}@%m%f"
+  else
+    #prompt_segment black default "%(!.%{%F{yellow}%}.)%F{$HOSTCOLOR}@%m%f"
+    prompt_segment black default "%F{$HOSTCOLOR}@%m%f"
   fi
 }
 
