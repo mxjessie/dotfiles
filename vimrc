@@ -71,6 +71,9 @@ let g:syntastic_warning_symbol = "🚫"
 let g:syntastic_style_error_symbol = "🆖"
 let g:syntastic_style_warning_symbol = "👎"
 
+" 'local' is not posix-compliant sh but works mostly everywhere
+let g:syntastic_sh_shellcheck_args="-e SC2039"
+
 " powerline: use python3 or python2
 if has('python3')
   python3 from powerline.vim import setup as powerline_setup
