@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cespare/vim-toml'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'LnL7/vim-nix'
 Plugin 'nathanielc/vim-tickscript' 
 Plugin 'nvie/vim-flake8'
 Plugin 'rodjek/vim-puppet'
@@ -96,20 +97,29 @@ noremap <C-n> :NERDTreeToggle<CR>
 " pretty json diffing
 command PPJson %!python -m json.tool
 
+" once a year i have to fiddle with line endings
+command FTypeUnix e ++ff=unix
+command FTypeDOS  e ++ff=dos
+command FTypeMac  e ++ff=mac
+
+command SaveAsUnix w ++ff=unix
+command SaveAsDOS  w ++ff=dos
+command SaveAsMac  w ++ff=mac
+
 " vimwiki
 let wiki_1 = {}
 let wiki_1.path = '~/vimwiki/'
 let wiki_1.path_html = '~/vimwiki_html/'
 
-" github.io experiment
-let wiki_2 = {}
-let wiki_2.path = '~/site/'
-let wiki_2.path_html = '~/site_html/'
-let wiki_2.template_path = '~/site/templates/'
-let wiki_2.template_default = 'default'
-let wiki_2.template_ext = '.html'
+" old github.io experiment
+"let wiki_2 = {}
+"let wiki_2.path = '~/site/'
+"let wiki_2.path_html = '~/site_html/'
+"let wiki_2.template_path = '~/site/templates/'
+"let wiki_2.template_default = 'default'
+"let wiki_2.template_ext = '.html'
 
-let g:vimwiki_list = [wiki_1, wiki_2]
+"let g:vimwiki_list = [wiki_1, wiki_2]
 
 " open today's journal page if started w/o filename
 if argc() == 0 && !exists("s:std_in")
