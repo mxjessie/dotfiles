@@ -8,6 +8,9 @@
     ~/.config/i3/config:
         create: true
         path: i3rc
+    +/.config/i3status/config:
+        create: true
+        path: i3status
     ~/.config/pulse/client.conf: 
         create: true
         path: pulse-client.conf
@@ -16,7 +19,11 @@
         path: redshift.conf
     ~/.config/xfce4/terminal/terminalrc:
         create: true
+        force: true
         path: xfce4-terminalrc
+    ~/.config/xfce4/terminal/colorschemes/monokai-dark.theme:
+        create: true
+        path: xfce4-terminal-monokai-dark
     ~/.jackdrc:
     ~/.taskrc-host:
         create: true

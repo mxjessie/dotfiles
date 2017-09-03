@@ -8,9 +8,6 @@
     ~/.config/nvim/init.vim:
         create: true
         path: vimrc
-    ~/.config/htop/htoprc:
-        create: true
-        path: htoprc
     ~/.gitconfig:
     ~/.gnupg/gpg-agent.conf:
         create: true
