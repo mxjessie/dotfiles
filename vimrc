@@ -7,7 +7,10 @@ call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cespare/vim-toml'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-vagrant'
 Plugin 'LnL7/vim-nix'
+Plugin 'modille/groovy.vim'
 Plugin 'nathanielc/vim-tickscript' 
 Plugin 'nvie/vim-flake8'
 Plugin 'rodjek/vim-puppet'
@@ -15,6 +18,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/NerdTree'
 Plugin 'scrooloose/syntastic'
 Plugin 'sickill/vim-monokai'
+Plugin 'tfnico/vim-gradle'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
@@ -75,6 +79,9 @@ let g:syntastic_style_warning_symbol = "👎"
 " 'local' is not posix-compliant sh but works mostly everywhere
 let g:syntastic_sh_shellcheck_args="-e SC2039"
 
+" enable the rust checker pls
+autocmd FileType rust let g:syntastic_rust_checkers = ['rustc']
+
 " powerline: use python3 or python2
 if has('python3')
   python3 from powerline.vim import setup as powerline_setup
@@ -121,11 +128,14 @@ let wiki_1.path_html = '~/vimwiki_html/'
 
 "let g:vimwiki_list = [wiki_1, wiki_2]
 
+" terraform
+let g:terraform_align=1
+
 " open today's journal page if started w/o filename
-if argc() == 0 && !exists("s:std_in")
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * VimwikiMakeDiaryNote
-endif
+"if argc() == 0 && !exists("s:std_in")
+"    autocmd StdinReadPre * let s:std_in=1
+"    autocmd VimEnter * VimwikiMakeDiaryNote
+"endif
 
 " from https://stackoverflow.com/questions/749297/can-i-see-changes-before-i-save-my-file-in-vim
 function! s:DiffWithSaved()
