@@ -8,7 +8,7 @@
     ~/.config/i3/config:
         create: true
         path: i3rc
-    +/.config/i3status/config:
+    ~/.config/i3status/config:
         create: true
         path: i3status
     ~/.config/pulse/client.conf: 
@@ -17,6 +17,9 @@
     ~/.config/redshift.conf:
         create: true
         path: redshift.conf
+    ~/.config/tilix/schemes:
+        create: true
+        path: tilix-monokai.json
     ~/.config/xfce4/terminal/terminalrc:
         create: true
         force: true
