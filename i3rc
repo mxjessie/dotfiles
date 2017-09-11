@@ -1,11 +1,6 @@
+# win key
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-#font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Inconsolata Medium 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -24,6 +19,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym --release Print exec "scrot -m '/home/jessie/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 bindsym --release Shift+Print exec "scrot -s -m '/home/jessie/Pictures/Screenshots/%s_%H%M_%Y-%m-%d'"
 
+# lock the screen
+bindsym $mod+Shift+l exec xscreensaver-command -lock
+
 #rename workspace 8 to 8: social
 assign [class="TelegramDesktop"] 8
 assign [class="discord"] 8
@@ -32,13 +30,16 @@ assign [class="discord"] 8
 assign [class="Claws-mail"] 9
 
 ### startup stuff
+exec --no-startup-id lxpolkit
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id xsetroot -solid black
 exec --no-startup-id claws-mail
 exec --no-startup-id discord
 exec --no-startup-id pk-update-icon
+
 ### i3 navigation
 
 # kill focused window
@@ -52,28 +53,16 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -99,7 +88,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -125,43 +114,23 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# lock the screen
-bindsym $mod+Shift_R+Escape exec "xlock"
 
-# resize window (you can also use the mouse for that)
+# resize mode
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        #bindsym j resize shrink width 10 px or 10 ppt
-        #bindsym k resize grow height 10 px or 10 ppt
-        #bindsym l resize shrink height 10 px or 10 ppt
-        #bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
         status_command i3status
 }
