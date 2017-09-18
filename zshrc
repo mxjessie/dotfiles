@@ -62,9 +62,9 @@ if cmd_exists 'jack_connect'; then
     alias jd="jack_disconnect"
 fi
 
-# not sure if this will drive me nuts or not but here goes
+# reminders
 if cmd_exists 'task'; then
-    task next
+    task active
 fi
 
 # vimwiki aliases
