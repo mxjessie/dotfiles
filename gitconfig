@@ -1,5 +1,6 @@
 [core]
     pager = less -SR
+    preloadindex = true
 
 [user]
     name = Jessie

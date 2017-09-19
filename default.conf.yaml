@@ -24,6 +24,9 @@
         create: true
         force: true
         path: oh-my-zsh
+    ~/.oh-my-zsh/custom/themes/powerlevel9k:
+        create: true
+        path: powerlevel9k
     ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme:
         create: true
         path: hostcolor-agnoster.zsh-theme

@@ -17,3 +17,8 @@
     path = zsh-jack-completion
     ignore = all
     url = https://github.com/wrl/zsh-jack-completion
+
+[submodule "powerlevel9k"]
+    path = powerlevel9k
+    ignore = all
+    url = https://github.com/bhilburn/powerlevel9k
