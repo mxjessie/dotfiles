@@ -31,11 +31,12 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     if [[ -a $HOME/.oh-my-zsh/custom/themes/powerlevel9k ]]; then
         ZSH_THEME="powerlevel9k/powerlevel9k"
         POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir background_jobs_joined vcs status)
-        POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time battery)
+        POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery time)
         POWERLEVEL9K_BATTERY_ICON=""
         POWERLEVEL9K_BACKGROUND_JOBS_ICON="⧖"
         POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(88 94 100 106 70 34 28 22)
         POWERLEVEL9K_STATUS_OK=false
+        POWERLEVEL9K_TIME_BACKGROUND="blue"
         POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
     else
         ZSH_THEME="agnoster"
