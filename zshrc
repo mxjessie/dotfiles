@@ -28,12 +28,23 @@ func lazy_source() {
 
 if [[ -a $HOME/.oh-my-zsh ]]; then
     export ZSH=$HOME/.oh-my-zsh
-    ZSH_THEME="agnoster"
+    if [[ -a $HOME/.oh-my-zsh/custom/themes/powerlevel9k ]]; then
+        ZSH_THEME="powerlevel9k/powerlevel9k"
+        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir background_jobs_joined vcs status)
+        POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time battery)
+        POWERLEVEL9K_BATTERY_ICON=""
+        POWERLEVEL9K_BACKGROUND_JOBS_ICON="⧖"
+        POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(88 94 100 106 70 34 28 22)
+        POWERLEVEL9K_STATUS_OK=false
+        POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
+    else
+        ZSH_THEME="agnoster"
+    fi
     COMPLETION_WAITING_DOTS="true"
     # Uncomment the following line if you want to disable marking untracked files
     # under VCS as dirty. This makes repository status check for large repositories
     # much, much faster.
-    #DISABLE_UNTRACKED_FILES_DIRTY="true"
+    DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
     plugins=(autopep8 colored-man-pages colorize git gpg-agent pep8 pylint python ruby safer-paste ssh-agent taskwarrior vagrant)
     zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -65,14 +76,21 @@ fi
 # reminders
 if cmd_exists 'task'; then
     task active
+    alias tac="task active"
+    # burnout charts
+    alias tbw="task burndown.weekly"
+    alias tbd="task burndown.daily"
+    alias tap="task add +personal"
+    alias taw="task add +work"
 fi
 
 # vimwiki aliases
 VIMWIKI_PATH="$HOME/vimwiki"
 if [[ -a $VIMWIKI_PATH ]]; then
-    alias diary="vim $VIMWIKI_PATH/diary/`date +%Y-%m-%d`.wiki"
-    alias diaryindex="vim $VIMWIKI_PATH/diary/diary.wiki"
-    alias wiki="vim $VIMWIKI_PATH/index.wiki"
+    alias wiki="vim -c VimwikiIndex"
+    alias note="vim -c VimwikiMakeDiaryNote"
+    alias diary="vim -c VimwikiMakeDiaryNote"
+    alias notes="vim -c VimwikiDiaryIndex"
 fi
 
 # lazy-load rbenv pls
