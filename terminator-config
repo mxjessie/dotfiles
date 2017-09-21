@@ -1,0 +1,34 @@
+[global_config]
+  extra_styling = False
+  focus = mouse
+  inactive_color_offset = 0.6
+  scroll_tabbar = True
+  title_font = Inconsolata Medium 10
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#272822"
+  title_inactive_fg_color = "#ae81ff"
+  title_receive_bg_color = "#f92672"
+  title_receive_fg_color = "#f9f8f5"
+  title_transmit_bg_color = "#ae81ff"
+  title_transmit_fg_color = "#f9f8f5"
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#272822"
+    cursor_color = "#ffffff"
+    font = Inconsolata Medium 10
+    foreground_color = "#f8f8f2"
+    palette = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5:#272822:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5"
+    scrollbar_position = hidden
+    use_system_font = False

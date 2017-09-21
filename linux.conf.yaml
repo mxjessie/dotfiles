@@ -17,6 +17,9 @@
     ~/.config/redshift.conf:
         create: true
         path: redshift.conf
+    ~/.config/terminator/config:
+        create: true
+        path: terminator-config
     ~/.config/tilix/schemes:
         create: true
         path: tilix-monokai.json
