@@ -30,7 +30,9 @@
     ~/.config/xfce4/terminal/colorschemes/monokai-dark.theme:
         create: true
         path: xfce4-terminal-monokai-dark
+    ~/.fonts.conf:
     ~/.jackdrc:
     ~/.taskrc-host:
         create: true
         path: private/taskrc-linux
+    ~/.Xresources:
