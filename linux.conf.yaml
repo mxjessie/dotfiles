@@ -38,3 +38,4 @@
         create: true
         path: private/taskrc-linux
     ~/.Xresources:
+    ~/.xscreensaver:
