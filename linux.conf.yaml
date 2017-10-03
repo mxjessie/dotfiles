@@ -20,6 +20,12 @@
     ~/.config/redshift.conf:
         create: true
         path: redshift.conf
+    ~/.config/renoise/V3.1.0/Themes/purply :3.xrnc:
+        create: true
+        path: renoise/purply :3.xrnc
+    ~/.config/renoise/V3.1.0/KeyBindings.xml:
+        create: true
+        path: renoise/KeyBindings.xml
     ~/.config/terminator/config:
         create: true
         path: terminator-config
