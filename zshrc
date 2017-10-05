@@ -83,6 +83,8 @@ if cmd_exists 'task'; then
     alias tbd="task burndown.daily"
     alias tap="task add +personal"
     alias taw="task add +work"
+    alias tc="task calendar"
+    alias tcy="task calendar $(date +%Y)"
 fi
 
 # vimwiki aliases
