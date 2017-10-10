@@ -3,6 +3,9 @@
         relink: true
 
 - link:
+    ~/.config/alacritty/alacritty.yml:
+        create: true
+        path: alacritty-mac.yml
     ~/.taskrc-host:
         create: true
         path: private/taskrc-mac
