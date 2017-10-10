@@ -1,0 +1,9 @@
+# gross, but it seems to work ??
+
+if-shell "test powerline-daemon" 'run-shell "powerline-daemon -q"'
+
+if-shell "[ -e /usr/share/powerline/bindings/tmux/powerline.conf ]" \
+    "source /usr/share/powerline/bindings/tmux/powerline.conf"
+
+if-shell "[ -e /usr/local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf ]" \
+    "source /usr/local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf"
