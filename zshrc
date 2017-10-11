@@ -113,6 +113,8 @@ if cmd_exists 'git'; then
         alias git=hub
         alias gpr='git pull-request'
     fi
+    alias git-delete-squashed='
+    git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 fi
 
 # rust tweaks. i dunno if these can go anywhere else
