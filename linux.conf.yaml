@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/.config/alacritty/alacritty.yml:
+      create: true
+      path: alacritty-linux.yml
     ~/.config/fontconfig/fonts.conf:
         create: true
         path: fonts.conf
