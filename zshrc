@@ -115,6 +115,14 @@ if cmd_exists 'git'; then
     fi
 fi
 
+# rust tweaks. i dunno if these can go anywhere else
+if cmd_exists 'cargo'; then
+    export CARGO_INCREMENTAL=1
+    if cmd_exists 'sccache'; then
+        export RUSTC_WRAPPER=sccache
+    fi
+fi
+
 # whoa dude
 if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat -t"; fi
 
