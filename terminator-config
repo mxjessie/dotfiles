@@ -27,7 +27,7 @@
   [[default]]
     background_color = "#272822"
     cursor_color = "#ffffff"
-    font = Inconsolata Medium 10
+    font = Inconsolata Medium 11
     foreground_color = "#f8f8f2"
     palette = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5:#272822:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5"
     scrollbar_position = hidden
