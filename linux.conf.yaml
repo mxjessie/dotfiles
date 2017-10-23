@@ -17,6 +17,9 @@
     ~/.config/i3status/config:
         create: true
         path: i3status
+    ~/.config/i3/i3status-rs.toml:
+        create: true
+        path: i3status-rs.toml
     ~/.config/pulse/client.conf: 
         create: true
         path: pulse-client.conf

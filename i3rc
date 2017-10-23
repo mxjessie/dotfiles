@@ -41,7 +41,7 @@ exec --no-startup-id xsetroot -solid black
 exec --no-startup-id claws-mail
 exec --no-startup-id discord
 exec --no-startup-id pk-update-icon
-
+exec --no-startup-id xsetroot -solid '#8700ff'
 ### i3 navigation
 
 # kill focused window
@@ -138,7 +138,19 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3status
+        font pango:Inconsolata Medium 10
+        position bottom
+        #status_command i3status
+        status_command $HOME/.cargo/bin/i3status-rs $HOME/.config/i3/i3status-rs.toml
+        colors {
+            separator  #a6e22e
+            background #303030
+            statusline #a6e22e
+            focused_workspace  #66d9ef #75715e #f8f8f2
+            active_workspace   #a1efe4 #272822 #f8f8f2
+            inactive_workspace #75715e #272822 #75715e
+            urgent_workspace   #f92672 #75715e #f8f8f2
+        }
 }
 
 
