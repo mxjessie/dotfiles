@@ -37,7 +37,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
         POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(88 94 100 106 70 34 28 22)
         POWERLEVEL9K_STATUS_OK=false
         POWERLEVEL9K_TIME_BACKGROUND="blue"
-        POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
+        POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=true
     else
         ZSH_THEME="agnoster"
     fi
@@ -45,7 +45,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # Uncomment the following line if you want to disable marking untracked files
     # under VCS as dirty. This makes repository status check for large repositories
     # much, much faster.
-    DISABLE_UNTRACKED_FILES_DIRTY="true"
+    #DISABLE_UNTRACKED_FILES_DIRTY="false"
     HIST_STAMPS="yyyy-mm-dd"
     plugins=(autopep8 colored-man-pages colorize git globalias gpg-agent pep8 pylint python ruby safer-paste ssh-agent taskwarrior vagrant)
     zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -94,6 +94,11 @@ if [[ -a $VIMWIKI_PATH ]]; then
     alias note="vim -c VimwikiMakeDiaryNote"
     alias diary="vim -c VimwikiMakeDiaryNote"
     alias notes="vim -c VimwikiDiaryIndex"
+fi
+
+# fix for a sorta-bug on os x
+if [[ -a '/usr/local/sbin/mtr' ]]; then
+    alias mtr='PATH=/usr/local/sbin:$PATH sudo mtr --displaymode 2 -netz'
 fi
 
 # lazy-load rbenv pls
