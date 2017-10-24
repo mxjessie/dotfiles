@@ -109,6 +109,11 @@ if cmd_exists 'rbenv'; then
     }
 fi
 
+if cmd_exists 'vagrant'; then
+    alias vagrant-reload='
+    for i in $(vagrant global-status | grep virtualbox | awk "{ print $1 }"); do vagrant reload $i; done'
+fi
+
 if cmd_exists 'git'; then
     alias git-sanitize='
     git config --local user.name "Jessie";
