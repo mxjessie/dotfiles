@@ -17,6 +17,9 @@
     branch = true
     status = true
 
+[diff "pdf"]
+    textconv = pdf2txt
+
 [alias]
     st = status
     ci = commit
