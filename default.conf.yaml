@@ -31,6 +31,7 @@
         create: true
         path: hostcolor-agnoster.zsh-theme
     ~/.pryrc:
+    ~/.puppet-lint.rc:
     ~/.rspec:
     ~/.taskrc:
         create: true
