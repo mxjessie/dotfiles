@@ -5,24 +5,17 @@ set nocp  " be youw twue sewf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'cespare/vim-toml'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'fatih/vim-go'
-Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vagrant'
-Plugin 'LnL7/vim-nix'
-Plugin 'modille/groovy.vim'
 Plugin 'nathanielc/vim-tickscript' 
-Plugin 'nvie/vim-flake8'
-Plugin 'rodjek/vim-puppet'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/NerdTree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'sickill/vim-monokai'
 Plugin 'tfnico/vim-gradle'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vimwiki/vimwiki'
 Plugin 'VundleVim/Vundle.vim'
@@ -68,6 +61,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" netrw: tree-style mode pls
+let g:netrw_liststyle = 3
+
 " syntastic: loc list and cute symbols
 let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
@@ -99,12 +95,6 @@ elseif has('python')
   python del powerline_setup
   set laststatus=2
 endif
-
-" nerdtree: ^n to toggle in any mode (noremap means map, but not recursively)
-noremap <C-n> :NERDTreeToggle<CR>
-" don't start if vim started w/o filename
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " pretty json diffing
 command PPJson %!python -m json.tool
