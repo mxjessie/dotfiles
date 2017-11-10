@@ -17,6 +17,10 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal
 # less sensible, more exciting
 bindsym $mod+Return exec /home/jessie/.cargo/bin/alacritty
 
+
+bindsym $mod+g exec i3-input -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P 'Google: '
+bindsym $mod+Shift+g exec i3-input -F 'exec --no-startup-id sensible-browser "%s"' -P 'Open URL: '
+
 # screenshot tools!
 bindsym --release Print exec "scrot -m '/home/jessie/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 bindsym --release Shift+Print exec "scrot -s -m '/home/jessie/Pictures/Screenshots/%s_%H%M_%Y-%m-%d'"
@@ -24,15 +28,24 @@ bindsym --release Shift+Print exec "scrot -s -m '/home/jessie/Pictures/Screensho
 # lock the screen
 bindsym $mod+Shift+l exec xscreensaver-command -lock
 
+### window settings
+
+for_window [class="feh"] floating enable
+for_window [class="MPlayer"] floating enable
+for_window [class="mpv"] floating enable
+
 #rename workspace 8 to 8: social
 assign [class="TelegramDesktop"] 8
 assign [class="discord"] 8
+assign [class="Slack"] 8
 
 #rename workspace 9 to 9: email
 assign [class="Claws-mail"] 9
 
 ### startup stuff
+exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id lxpolkit
+exec --no-startup-id ibus-daemon -dr
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift-gtk
@@ -40,6 +53,8 @@ exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id xsetroot -solid black
 exec --no-startup-id claws-mail
 exec --no-startup-id discord
+exec --no-startup-id telegram
+exec --no-startup-id slack
 exec --no-startup-id pk-update-icon
 exec --no-startup-id xsetroot -solid '#8700ff'
 ### i3 navigation
