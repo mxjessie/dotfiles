@@ -26,6 +26,29 @@ func lazy_source() {
     fi
 }
 
+# from http://www.math.cmu.edu/~gautam/sj/blog/20140625-zsh-expand-alias.html
+typeset -a ealiases
+ealiases=()
+
+# usage: ealias [command]
+function ealias()
+{
+    alias $1
+    ealiases+=(${1%%\=*})
+}
+
+function expand-ealias()
+{
+    if [[ $LBUFFER =~ "(^|[;|&])\s*(${(j:|:)ealiases})\$" ]]; then
+        zle _expand_alias
+        zle expand-word
+    fi
+    zle magic-space
+}
+
+zle -N expand-ealias
+
+# oh-my-zsh setup
 if [[ -a $HOME/.oh-my-zsh ]]; then
     export ZSH=$HOME/.oh-my-zsh
     if [[ -a $HOME/.oh-my-zsh/custom/themes/powerlevel9k ]]; then
@@ -47,7 +70,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # much, much faster.
     #DISABLE_UNTRACKED_FILES_DIRTY="false"
     HIST_STAMPS="yyyy-mm-dd"
-    plugins=(autopep8 colored-man-pages colorize git globalias gpg-agent pep8 pylint python ruby safer-paste ssh-agent taskwarrior vagrant)
+    plugins=(autopep8 colored-man-pages colorize git gpg-agent pep8 pylint python ruby safer-paste ssh-agent taskwarrior vagrant)
     zstyle :omz:plugins:ssh-agent agent-forwarding on
     source $ZSH/oh-my-zsh.sh
 else
@@ -122,6 +145,7 @@ if cmd_exists 'git'; then
     if cmd_exists 'hub'; then
         alias git=hub
         alias gpr='git pull-request'
+        alias gpup='git push -u'
     fi
     alias git-delete-squashed='
     git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
@@ -155,3 +179,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 # please don,t beeb beeb because i,m sleep ....
 setopt NO_BEEP
+
+# ealias stuff
+bindkey ' ' expand-ealias
+bindkey '^ ' magic-space
+bindkey -M isearch " " magic-space
