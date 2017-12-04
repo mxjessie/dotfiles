@@ -15,15 +15,15 @@ hide_edge_borders smart
 # start a terminal
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 # less sensible, more exciting
-bindsym $mod+Return exec /home/jessie/.cargo/bin/alacritty
+bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
 
 
 bindsym $mod+g exec i3-input -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P 'Google: '
 bindsym $mod+Shift+g exec i3-input -F 'exec --no-startup-id sensible-browser "%s"' -P 'Open URL: '
 
 # screenshot tools!
-bindsym --release Print exec "scrot -m '/home/jessie/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
-bindsym --release Shift+Print exec "scrot -s -m '/home/jessie/Pictures/Screenshots/%s_%H%M_%Y-%m-%d'"
+bindsym --release $mod+Print exec 'scrot -m "$HOME/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"'
+bindsym --release $mod+Shift+Print exec 'scrot -s -m "$HOME/Pictures/Screenshots/%s_%H%M_%Y-%m-%d"'
 
 # lock the screen
 bindsym $mod+Shift+l exec xscreensaver-command -lock

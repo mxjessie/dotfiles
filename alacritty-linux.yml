@@ -152,6 +152,8 @@ selection:
 
 hide_cursor_when_typing: false
 
+cursor_style: Beam
+
 live_config_reload: true
 
 shell:
