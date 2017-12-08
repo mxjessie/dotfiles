@@ -124,6 +124,11 @@ if [[ -a '/usr/local/sbin/mtr' ]]; then
     alias mtr='PATH=/usr/local/sbin:$PATH sudo mtr --displaymode 2 -netz'
 fi
 
+# i guess golang-1.8 from debian's repos doesn't get put into $PATH by default
+if [[ -a '/usr/lib/go-1.8/bin' ]]; then
+    export PATH="$PATH:/usr/lib/go-1.8/bin"
+fi
+
 # lazy-load rbenv pls
 if cmd_exists 'rbenv'; then
     rbenv() {
