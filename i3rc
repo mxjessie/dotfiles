@@ -17,7 +17,7 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal
 # less sensible, more exciting
 bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
 
-
+# search shortcuts
 bindsym $mod+g exec i3-input -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P 'Google: '
 bindsym $mod+Shift+g exec i3-input -F 'exec --no-startup-id sensible-browser "%s"' -P 'Open URL: '
 
@@ -27,6 +27,14 @@ bindsym --release $mod+Shift+Print exec 'scrot -s -m "$HOME/Pictures/Screenshots
 
 # lock the screen
 bindsym $mod+Shift+l exec xscreensaver-command -lock
+
+# brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# keyboard brightness
+#bindsym XF86KbdBrightnessUp
+#bindsym XF86KbdBrightnessDown
 
 ### window settings
 
@@ -41,8 +49,10 @@ assign [class="Slack"] 8
 
 #rename workspace 9 to 9: email
 assign [class="Claws-mail"] 9
+assign [class="Thunderbird"] 9
 
 ### startup stuff
+exec --no-startup-id $HOME/.hidpi
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id lxpolkit
 exec --no-startup-id ibus-daemon -dr
