@@ -1,0 +1,20 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/pulse/client.conf: 
+        create: true
+        path: pulse-client.conf
+    ~/.config/renoise/V3.1.0/Themes/purply :3.xrnc:
+        create: true
+        path: renoise/purply :3.xrnc
+    ~/.config/renoise/V3.1.0/KeyBindings.xml:
+        create: true
+        path: renoise/KeyBindings.xml
+    ~/.jackdrc:
+    ~/.offlineimaprc:
+        create: true
+        path: private/offlineimaprc-personal
