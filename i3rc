@@ -69,9 +69,6 @@ exec --no-startup-id pk-update-icon
 exec --no-startup-id xsetroot -solid '#8700ff'
 ### i3 navigation
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -91,18 +88,25 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split horizontal/vertical
 bindsym $mod+h split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# fullscreen
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# change container layout (stacked, tabbed, FIBONACCI)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split # original
+
+# kill focused window
+#bindsym $mod+Shift+q kill # original
+
+# let's try fibonacci splits
+default_orientation vertical
+for_window [class=".*"] split toggle
+bindsym $mod+Shift+q split toggle kill
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -147,35 +151,35 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'logout?' -b '✔' 'i3-msg exit'"
 
 # resize mode
-mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+mode "↹" {
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "↹"
 
 bar {
-        font pango:Inconsolata Medium 10
-        position bottom
-        #status_command i3status
-        status_command $HOME/.cargo/bin/i3status-rs $HOME/.config/i3/i3status-rs.toml
-        colors {
-            separator  #a6e22e
-            background #303030
-            statusline #a6e22e
-            focused_workspace  #66d9ef #75715e #f8f8f2
-            active_workspace   #a1efe4 #272822 #f8f8f2
-            inactive_workspace #75715e #272822 #75715e
-            urgent_workspace   #f92672 #75715e #f8f8f2
-        }
+    font pango:Inconsolata Medium 10
+    position bottom
+    status_command i3status
+    #status_command $HOME/.cargo/bin/i3status-rs $HOME/.config/i3/i3status-rs.toml
+    colors {
+        separator  #a6e22e
+        background #303030
+        statusline #a6e22e
+        focused_workspace  #66d9ef #75715e #f8f8f2
+        active_workspace   #a1efe4 #272822 #f8f8f2
+        inactive_workspace #75715e #272822 #75715e
+        urgent_workspace   #f92672 #75715e #f8f8f2
+    }
 }
 
 
