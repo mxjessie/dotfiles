@@ -97,6 +97,10 @@ if cmd_exists 'jack_connect'; then
     alias jd="jack_disconnect"
 fi
 
+if cmd_exists 'whois'; then
+    alias asnlookup="whois -h whois.cymru.com \" -v $1\""
+fi
+
 # reminders
 if cmd_exists 'task'; then
     task active
