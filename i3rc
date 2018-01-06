@@ -28,8 +28,8 @@ bindsym $mod+Shift+l exec $HOME/bin/xlock
 bindsym XF86ScreenSaver exec $HOME/bin/xlock
 
 # brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #bindsym XF86KbdBrightnessUp
 #bindsym XF86KbdBrightnessDown
 
