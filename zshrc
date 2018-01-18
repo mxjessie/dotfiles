@@ -60,7 +60,9 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
         POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(88 94 100 106 70 34 28 22)
         POWERLEVEL9K_STATUS_OK=false
         POWERLEVEL9K_TIME_BACKGROUND="blue"
-        POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=true
+        POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
+        #POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-aheadbehind git-remotebranch git-tagname)
+        POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-remotebranch git-tagname)
     else
         ZSH_THEME="agnoster"
     fi
@@ -68,7 +70,7 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     # Uncomment the following line if you want to disable marking untracked files
     # under VCS as dirty. This makes repository status check for large repositories
     # much, much faster.
-    #DISABLE_UNTRACKED_FILES_DIRTY="false"
+    DISABLE_UNTRACKED_FILES_DIRTY="true"
     HIST_STAMPS="yyyy-mm-dd"
     plugins=(autopep8 colored-man-pages colorize git gpg-agent pep8 pylint python ruby safer-paste ssh-agent taskwarrior vagrant)
     zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -110,6 +112,8 @@ if cmd_exists 'task'; then
     alias tbd="task burndown.daily"
     alias tap="task add +personal"
     alias taw="task add +work"
+    alias taps="task add +personal start:now"
+    alias taws="task add +work start:now"
     alias tc="task calendar"
     alias tcy="task calendar $(date +%Y)"
 fi
@@ -162,7 +166,8 @@ fi
 
 # rust tweaks. i dunno if these can go anywhere else
 if cmd_exists 'cargo'; then
-    export CARGO_INCREMENTAL=1
+    # this frells up alacritty builds, unfortunately
+    #export CARGO_INCREMENTAL=1
     if cmd_exists 'sccache'; then
         export RUSTC_WRAPPER=sccache
     fi
