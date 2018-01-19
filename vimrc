@@ -28,6 +28,13 @@ syntax on
 colorscheme monokai
 set background=dark
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+" don't really care about capitalization
+set spellcapcheck=""
+" just underlines for the spellchecker, please
+hi clear SpellBad
+hi clear SpellCap
+hi SpellBad cterm=underline,bold
+hi SpellCap cterm=underline,bold
 let python_hilight_all=1
 
 set encoding=utf8
