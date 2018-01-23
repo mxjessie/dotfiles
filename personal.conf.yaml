@@ -15,6 +15,3 @@
         create: true
         path: renoise/KeyBindings.xml
     ~/.jackdrc:
-    ~/.offlineimaprc:
-        create: true
-        path: private/offlineimaprc-personal

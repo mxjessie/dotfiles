@@ -23,6 +23,9 @@
     ~/.config/redshift.conf:
         create: true
         path: redshift.conf
+    ~/.config/rofi/config:
+        create: true
+        path: rofi-config
     ~/.config/terminator/config:
         create: true
         path: terminator-config
