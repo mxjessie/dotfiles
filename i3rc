@@ -1,3 +1,23 @@
+# base16 monokai color template
+# from https://gist.github.com/akrasic/94021a79acd70898a26b
+
+set $base00 #272822
+set $base01 #383830
+set $base02 #49483e
+set $base03 #75715e
+set $base04 #a59f85
+set $base05 #f8f8f2
+set $base06 #f5f4f1
+set $base07 #f9f8f5
+set $base08 #f92672
+set $base09 #fd971f
+set $base0A #f4bf75
+set $base0B #a6e22e
+set $base0C #a1efe4
+set $base0D #66d9ef
+set $base0E #ae81ff
+set $base0F #cc6633
+
 # win key
 set $mod Mod4
 set $font pango:Inconsolata Medium 10
@@ -10,14 +30,24 @@ new_window pixel 2
 new_float pixel 2
 hide_edge_borders smart
 
+# for gaps
+for_window [class="^.*"] border pixel 2
+smart_gaps on
+smart_borders on
+#themeing                   border  backgr. text    indicator
+client.focused              $base0E $base0E $base00 $base01
+client.focused_inactive     $base02 $base02 $base03 $base01
+client.unfocused            $base01 $base01 $base03 $base01
+client.urgent               $base02 $base08 $base07 $base08
+
 ### app launcher shortcuts
 # terminals
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
 
 # search shortcuts
-bindsym $mod+g exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
-bindsym $mod+Shift+g exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
+#bindsym $mod+g exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
+#bindsym $mod+Shift+g exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
 
 # screenshot tools!
 bindsym --release $mod+Print exec 'scrot -m "$HOME/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"'
@@ -40,6 +70,7 @@ bindsym XF86TouchpadToggle exec $HOME/bin/tp-toggle
 for_window [class="feh"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
+for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
 
 #rename workspace 8 to 8: social
 assign [class="TelegramDesktop"] 8
@@ -173,14 +204,57 @@ bar {
     #status_command i3status
     status_command $HOME/.cargo/bin/i3status-rs $HOME/.config/i3/i3status-rs.toml
     colors {
-        separator  #a6e22e
-        background #303030
-        statusline #a6e22e
-        focused_workspace  #66d9ef #75715e #f8f8f2
-        active_workspace   #a1efe4 #272822 #f8f8f2
-        inactive_workspace #75715e #272822 #75715e
-        urgent_workspace   #f92672 #75715e #f8f8f2
+        separator  $base0B
+        background $base01 # was 303030
+        statusline $base05
+        focused_workspace  $base0D $base03 $base05
+        active_workspace   $base0C $base00 $base05
+        inactive_workspace $base03 $base00 $base03
+        urgent_workspace   $base08 $base03 $base05
     }
 }
 
+### i3-gaps stuff ###
+
+gaps inner 12
+gaps outer -2
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# collides with googling
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
