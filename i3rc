@@ -18,14 +18,15 @@ set $base0D #66d9ef
 set $base0E #ae81ff
 set $base0F #cc6633
 
+set $exec exec --no-startup-id
+
 # win key
 set $mod Mod4
+set $alt Mod1
 set $font pango:Inconsolata Medium 10
-
 font $font
 
 floating_modifier $mod
-
 new_window pixel 2
 new_float pixel 2
 hide_edge_borders smart
@@ -42,34 +43,40 @@ client.urgent               $base02 $base08 $base07 $base08
 
 ### app launcher shortcuts
 # terminals
-bindsym $mod+Shift+Return exec i3-sensible-terminal
-bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
+bindsym $mod+Shift+Return $exec i3-sensible-terminal
+bindsym $mod+Return $exec $HOME/.cargo/bin/alacritty
 
 # search shortcuts
-#bindsym $mod+g exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
-#bindsym $mod+Shift+g exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
+#bindsym $mod+g $exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
+#bindsym $mod+Shift+g $exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
 
 # screenshot tools!
-bindsym --release $mod+Print exec 'scrot -m "$HOME/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"'
-bindsym --release $mod+Shift+Print exec 'scrot -s -m "$HOME/Pictures/Screenshots/%s_%H%M_%Y-%m-%d"'
+bindsym --release $mod+Print $exec 'scrot -m "$HOME/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"'
+bindsym --release $mod+Shift+Print $exec 'scrot -s -m "$HOME/Pictures/Screenshots/%s_%H%M_%Y-%m-%d"'
 
 # lock the screen
-bindsym $mod+Shift+l exec $HOME/bin/xlock
-bindsym XF86ScreenSaver exec $HOME/bin/xlock
+bindsym $mod+Shift+l $exec $HOME/bin/xlock
+bindsym XF86ScreenSaver $exec $HOME/bin/xlock
 
 # brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp $exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown $exec xbacklight -dec 5
 #bindsym XF86KbdBrightnessUp
 #bindsym XF86KbdBrightnessDown
 
 # touchpad toggle
-bindsym XF86TouchpadToggle exec $HOME/bin/tp-toggle
+bindsym XF86TouchpadToggle $exec $HOME/bin/tp-toggle
 
 ### window settings
+for_window [window_type="splash"] floating enable
+
+for_window [class="Claws-mail" window_role="compose"] floating enable, border normal
 for_window [class="feh"] floating enable
+for_window [instance="keepassx"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
+for_window [instance="speedcrunch"] floating enable, border normal
+for_window [class="Thunderbird" instance="Msgcompose"] floating enable, border normal
 for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
 
 #rename workspace 8 to 8: social
@@ -102,11 +109,11 @@ exec --no-startup-id pk-update-icon
 ### i3 navigation
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d $exec dmenu_run
+# bindsym $mod+d $exec --no-startup-id i3-dmenu-desktop
+set $launcher $exec rofi -show run
+bindsym $mod+d $launcher
+bindsym XF86Launch1 $launcher # thinkvantage button
 
 # change focus
 bindsym $mod+Left focus left
@@ -157,6 +164,9 @@ bindsym $mod+c focus child
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+#window switcher
+bindsym $alt+Tab $exec rofi -show window
+
 # switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -183,7 +193,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -f $font -t warning -m 'logout?' -b '✔' 'i3-msg exit'"
+bindsym $mod+Shift+e $exec "i3-nagbar -f $font -t warning -m 'logout?' -b '✔' 'i3-msg exit'"
 
 # resize mode
 mode "↹" {
