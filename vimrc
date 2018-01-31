@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'nathanielc/vim-tickscript' 
 Plugin 'rodjek/vim-puppet'
@@ -27,6 +28,7 @@ filetype plugin indent on
 syntax on
 colorscheme monokai
 set background=dark
+hi Normal ctermbg=none
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 " don't really care about capitalization
 set spellcapcheck=""
