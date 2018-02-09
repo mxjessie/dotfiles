@@ -5,7 +5,9 @@ set nocp  " be youw twue sewf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'fatih/vim-go'
 Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'nathanielc/vim-tickscript' 
@@ -26,7 +28,18 @@ call vundle#end()
 
 filetype plugin indent on
 syntax on
-colorscheme monokai
+set t_ut=  " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
+
+if has("termguicolors")
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 12
+colorscheme nord
 set background=dark
 hi Normal ctermbg=none
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -79,20 +92,25 @@ let g:netrw_liststyle = 3
 let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_loc_list_height = 3
-"let g:syntastic_error_symbol = "💥"
-"let g:syntastic_warning_symbol = "🚫"
-"let g:syntastic_style_error_symbol = "🆖"
-"let g:syntastic_style_warning_symbol = "👎"
-let g:syntastic_error_symbol = "X"
-let g:syntastic_warning_symbol = "x"
-let g:syntastic_style_error_symbol = "!"
-let g:syntastic_style_warning_symbol = "?"
+let g:syntastic_error_symbol = "💥"
+let g:syntastic_warning_symbol = "🚫"
+let g:syntastic_style_error_symbol = "🆖"
+let g:syntastic_style_warning_symbol = "👎"
+"let g:syntastic_error_symbol = "X"
+"let g:syntastic_warning_symbol = "x"
+"let g:syntastic_style_error_symbol = "!"
+"let g:syntastic_style_warning_symbol = "?"
 
 " 'local' is not posix-compliant sh but works mostly everywhere
 let g:syntastic_sh_shellcheck_args="-e SC2039"
 
 " enable the rust checker pls
 autocmd FileType rust let g:syntastic_rust_checkers = ['rustc']
+
+" vim-go settings
+let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
 
 " powerline: use python3 or python2
 if has('python3')
