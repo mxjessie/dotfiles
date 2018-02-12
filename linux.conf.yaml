@@ -42,5 +42,11 @@
     ~/.taskrc-host:
         create: true
         path: private/taskrc-linux
+    ~/.terminfo/xterm-256color-italic.terminfo:
+        create: true
+        path: xterm-256color-italic.terminfo
     ~/.Xresources:
     ~/.xscreensaver:
+
+- shell:
+  - [tic ~/.terminfo/xterm-256color-italic.terminfo]
