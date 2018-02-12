@@ -75,6 +75,7 @@ for_window [class="feh"] floating enable
 for_window [instance="keepassx"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
+for_window [class="obs"] floating enable
 for_window [instance="speedcrunch"] floating enable, border normal
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable, border normal
 for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
@@ -111,9 +112,8 @@ exec --no-startup-id pk-update-icon
 # start dmenu (a program launcher)
 #bindsym $mod+d $exec dmenu_run
 # bindsym $mod+d $exec --no-startup-id i3-dmenu-desktop
-set $launcher $exec rofi -show run
-bindsym $mod+d $launcher
-bindsym XF86Launch1 $launcher # thinkvantage button
+bindsym $mod+d $exec rofi -show run
+bindsym XF86Launch1 $exec speedcrunch
 
 # change focus
 bindsym $mod+Left focus left
