@@ -4,11 +4,6 @@
 
 - clean: ['~']
 
-- shell:
-    - [git submodule update --init --recursive --remote, Installing submodules]
-    - [git submodule foreach git checkout master]
-    - [git submodule foreach git pull --ff-only origin master]
-
 - link:
     ~/.config/nvim/init.vim:
         create: true
@@ -45,3 +40,6 @@
     ~/.zshrc:
     ~/.zshenv:
 
+- shell:
+    - ["vim -c :PluginClean -c :q -c :q", Cleaning vim modules]
+    - ["vim -c :PluginInstall -c :q -c :q", Installing vim modules]

@@ -10,8 +10,11 @@ DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+echo "Installing submodules.. "
+git submodule update -q --init --recursive --remote "${DOTBOT_DIR}"
+git submodule foreach git checkout -q master
+git submodule foreach git pull -q --ff-only origin master
 
-for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
+for conf in "${DEFAULT_CONFIG_PREFIX}" "${@}"; do
     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${conf}${CONFIG_SUFFIX}"
 done
