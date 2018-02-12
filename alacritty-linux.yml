@@ -22,18 +22,18 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Source Code Pro
-    style: Medium
+    family: Liberation Mono
+    style: Regular
 
   bold:
-    family: Source Code Pro
-    style: Medium
+    family: Liberation Mono
+    style: Bold
 
   italic:
-    family: Source Code Pro
-    style: Medium
+    family: Liberation Mono
+    style: Italic
 
-  size: 11.0
+  size: 10.0
 
   offset:
     x: 0.0
