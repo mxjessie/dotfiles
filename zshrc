@@ -103,6 +103,10 @@ if cmd_exists 'whois'; then
     alias asnlookup="whois -h whois.cymru.com \" -v $1\""
 fi
 
+if cmd_exists 'exercism'; then
+    alias es='exercism submit'
+fi
+
 # reminders
 if cmd_exists 'task'; then
     task active
@@ -144,6 +148,20 @@ if cmd_exists 'rbenv'; then
         rbenv "$@"
     }
 fi
+
+# ssh fixes for custom termcaps
+if [[ $TERM == 'screen-256color-italic' ]]; then
+    alias ssh="TERM=screen-256color ssh"
+fi
+
+if [[ $TERM == 'tmux-256color' ]]; then
+    alias ssh="TERM=screen-256color ssh"
+fi
+
+if [[ $TERM == 'xterm-256color-italic' ]]; then
+    alias ssh="TERM=xterm-256color ssh"
+fi
+
 
 if cmd_exists 'vagrant'; then
     alias vagrant-reload='
