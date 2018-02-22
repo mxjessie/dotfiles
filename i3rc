@@ -91,27 +91,27 @@ assign [class="Claws-mail"] 9
 assign [class="Thunderbird"] 9
 
 ### startup stuff
-exec --no-startup-id $HOME/bin/xwallpaper
-exec --no-startup-id $HOME/.hidpi
-exec --no-startup-id vmware-user-suid-wrapper
-exec --no-startup-id lxpolkit
-exec --no-startup-id ibus-daemon -dr
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
-exec --no-startup-id compton -f --inactive-dim 0.2 -D 8
-exec --no-startup-id redshift-gtk
-#exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id xautolock -time 5 -corners 00+- -cornerdelay 2 -cornerredelay 2 -locker $HOME/bin/xlock
-exec --no-startup-id claws-mail
-exec --no-startup-id discord
-exec --no-startup-id telegram
-exec --no-startup-id slack
-exec --no-startup-id pk-update-icon
-### i3 navigation
+$exec $HOME/bin/xwallpaper
+$exec $HOME/.hidpi
+$exec vmware-user-suid-wrapper
+$exec lxpolkit
+$exec ibus-daemon -dr
+$exec nm-applet
+$exec blueman-applet
+$exec compton -f --inactive-dim 0.2 -D 8
+$exec redshift-gtk
+#exec xscreensaver -no-splash
+$exec xautolock -time 5 -detectsleep -secure -corners 00+- -cornerdelay 2 -cornerredelay 15 -locker $HOME/bin/xlock
+$exec claws-mail
+$exec discord
+$exec telegram
+$exec slack
+$exec pk-update-icon
 
+### i3 navigation
 # start dmenu (a program launcher)
 #bindsym $mod+d $exec dmenu_run
-# bindsym $mod+d $exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d $exec i3-dmenu-desktop
 bindsym $mod+d $exec rofi -show run
 bindsym XF86Launch1 $exec speedcrunch
 
