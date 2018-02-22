@@ -1,7 +1,7 @@
-rofi.columns: 3
-rofi.font: Inconsolata Medium 10
+rofi.columns: 1
+rofi.font: Liberation Mono Medium 10
 rofi.lines: 15
-rofi.modi: run,window,ssh
+rofi.modi: run,window,windowcd,ssh
 rofi.terminal: i3-sensible-terminal
-rofi.theme: /usr/share/rofi/themes/Monokai.rasi
+rofi.theme: base16-nord.rasi
 rofi.width: 30

@@ -6,8 +6,11 @@
 
 - link:
     ~/.config/alacritty/alacritty.yml:
-      create: true
-      path: alacritty-linux.yml
+        create: true
+        path: alacritty-linux.yml
+    ~/.config/dunst/dunstrc:
+        create: true
+        path: dunstrc
     ~/.config/fontconfig/fonts.conf:
         create: true
         path: fonts.conf
@@ -26,6 +29,9 @@
     ~/.config/rofi/config:
         create: true
         path: rofi-config
+    ~/.config/rofi/base16-nord.rasi:
+        create: true
+        path: rofi-base16-nord.rasi
     ~/.config/terminator/config:
         create: true
         path: terminator-config
