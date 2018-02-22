@@ -91,6 +91,7 @@ assign [class="Claws-mail"] 9
 assign [class="Thunderbird"] 9
 
 ### startup stuff
+$exec dunst
 $exec $HOME/bin/xwallpaper
 $exec $HOME/.hidpi
 $exec vmware-user-suid-wrapper
