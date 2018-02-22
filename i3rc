@@ -112,7 +112,7 @@ $exec pk-update-icon
 # start dmenu (a program launcher)
 #bindsym $mod+d $exec dmenu_run
 # bindsym $mod+d $exec i3-dmenu-desktop
-bindsym $mod+d $exec rofi -show run
+bindsym $mod+d $exec zsh -c "rofi -show run"
 bindsym XF86Launch1 $exec speedcrunch
 
 # change focus
@@ -166,6 +166,7 @@ bindsym $mod+Shift+Tab workspace prev
 
 #window switcher
 bindsym $alt+Tab $exec rofi -show window
+bindsym $alt+Shift+Tab rofi -show windowcd
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
