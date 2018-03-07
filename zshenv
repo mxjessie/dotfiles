@@ -5,6 +5,7 @@ func add_to_path() {
 }
 
 add_to_path $HOME/bin
+add_to_path $HOME/go/bin
 add_to_path $HOME/.cabal/bin
 add_to_path $HOME/.cargo/bin
 add_to_path $HOME/.local/bin
