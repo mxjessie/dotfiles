@@ -32,9 +32,10 @@ new_float pixel 2
 hide_edge_borders smart
 
 # for gaps
-for_window [class="^.*"] border pixel 2
-smart_gaps on
-smart_borders on
+#for_window [class="^.*"] border pixel 2
+#smart_gaps on
+#smart_borders on
+
 #themeing                   border  backgr. text    indicator
 client.focused              $base0E $base0E $base00 $base01
 client.focused_inactive     $base02 $base02 $base03 $base01
@@ -51,8 +52,8 @@ bindsym $mod+Return $exec $HOME/.cargo/bin/alacritty
 #bindsym $mod+Shift+g $exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
 
 # screenshot tools!
-bindsym --release $mod+Print $exec 'scrot -m "$HOME/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"'
-bindsym --release $mod+Shift+Print $exec 'scrot -s -m "$HOME/Pictures/Screenshots/%s_%H%M_%Y-%m-%d"'
+bindsym --release Print $exec "maim $HOME/Pictures/Screenshots/$(date +%s_%Y%m%d-%H%m%S.png)"
+bindsym --release Shift+Print $exec "maim -s $HOME/Pictures/Screenshots/$(date +%s_%Y%m%d-%H%m%S.png)"
 
 # lock the screen
 bindsym $mod+Shift+l $exec $HOME/bin/xlock
@@ -227,46 +228,46 @@ bar {
 }
 
 ### i3-gaps stuff ###
-
-gaps inner 12
-gaps outer -2
-
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-# collides with googling
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
+# i don't remember why i got so excited about i3-gaps
+#gaps inner 12
+#gaps outer -2
+#
+#set $mode_gaps Gaps: (o) outer, (i) inner
+#set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+## collides with googling
+#bindsym $mod+Shift+g mode "$mode_gaps"
+#
+#mode "$mode_gaps" {
+#        bindsym o      mode "$mode_gaps_outer"
+#        bindsym i      mode "$mode_gaps_inner"
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#
+#mode "$mode_gaps_inner" {
+#        bindsym plus  gaps inner current plus 5
+#        bindsym minus gaps inner current minus 5
+#        bindsym 0     gaps inner current set 0
+#
+#        bindsym Shift+plus  gaps inner all plus 5
+#        bindsym Shift+minus gaps inner all minus 5
+#        bindsym Shift+0     gaps inner all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#
+#mode "$mode_gaps_outer" {
+#        bindsym plus  gaps outer current plus 5
+#        bindsym minus gaps outer current minus 5
+#        bindsym 0     gaps outer current set 0
+#
+#        bindsym Shift+plus  gaps outer all plus 5
+#        bindsym Shift+minus gaps outer all minus 5
+#        bindsym Shift+0     gaps outer all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#
