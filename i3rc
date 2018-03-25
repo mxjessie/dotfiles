@@ -73,6 +73,7 @@ for_window [window_type="splash"] floating enable
 
 for_window [class="Claws-mail" window_role="compose"] floating enable, border normal
 for_window [class="feh"] floating enable
+for_window [class="Furcadia.exe"] floating enable
 for_window [instance="keepassx"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
