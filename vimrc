@@ -4,8 +4,8 @@ set nocp  " be youw twue sewf
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'arcticicestudio/nord-vim'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'arcticicestudio/nord-vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'hashivim/vim-terraform'
@@ -15,12 +15,13 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 "Plugin 'sheerun/vim-polyglot'
-Plugin 'sickill/vim-monokai'
+"Plugin 'sickill/vim-monokai'
 Plugin 'tfnico/vim-gradle'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tssm/fairyfloss.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vimwiki/vimwiki'
 Plugin 'VundleVim/Vundle.vim'
@@ -36,10 +37,10 @@ if has("termguicolors")
   set termguicolors
 endif
 
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_comment_brightness = 12
-colorscheme nord
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
+"let g:nord_comment_brightness = 12
+colorscheme fairyfloss
 set background=dark
 hi Normal ctermbg=none
 highlight ColorColumn ctermbg=0 guibg=lightgrey
