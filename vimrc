@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'arcticicestudio/nord-vim'
+Plugin 'chrisbra/Colorizer'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'hashivim/vim-terraform'
