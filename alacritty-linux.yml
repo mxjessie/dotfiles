@@ -22,16 +22,16 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Liberation Mono
+    family: monofur
     style: Regular
 
   bold:
-    family: Liberation Mono
-    style: Bold
+    family: monofur
+    style: bold
 
   italic:
-    family: Liberation Mono
-    style: Italic
+    family: monofur
+    style: italic
 
   size: 10.0
 
@@ -49,38 +49,37 @@ render_timer: false
 
 custom_cursor_colors: true
 
-# 256 color noto
 colors:
   primary:
-    background: '0x2E3440'
-    foreground: '0xD8DEE9'
+    background: '#5a5475'
+    foreground: '#f8f8f2'
   cursor:
-    text: '0x2E3440'
-    cursor: '0xD8DEE9'
+    text: '#f8f8f2'
+    cursor: '#c7b7c7'
   normal:
-    black: '0x3B4252'
-    red: '0xBF616A'
-    green: '0xA3BE8C'
-    yellow: '0xEBCB8B'
-    blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x88C0D0'
-    white: '0xE5E9F0'
+    black: '#3b3a32'
+    red: '#f1756f'
+    green: '#6de874'
+    yellow: '#e6c000'
+    blue: '#a381ff'
+    magenta: '#ff87b1'
+    cyan: '#7ef5b8'
+    white: '#c7b7c7'
   bright:
-    black: '0x4C566A'
-    red: '0xBF616A'
-    green: '0xA3BE8C'
-    yellow: '0xEBCB8B'
-    blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x8FBCBB'
-    white: '0xECEFF5'
+    black: '#685868'
+    red: '#ff9f9a'
+    green: '#7bfa81'
+    yellow: '#ffea00'
+    blue: '#c5a3ff'
+    magenta: '#ffb8d1'
+    cyan: '#c2ffdf'
+    white: '#ffefff'
 
 visual_bell:
   animation: EaseOutExpo
   duration: 50
 
-background_opacity: 0.95
+background_opacity: 1.0
 
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
