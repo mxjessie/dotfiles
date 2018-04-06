@@ -44,7 +44,7 @@ endif
 colorscheme fairyfloss
 set background=dark
 hi Normal ctermbg=none
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightmagenta
 " don't really care about capitalization
 set spellcapcheck=""
 " just underlines for the spellchecker, please
@@ -145,14 +145,14 @@ let wiki_1.path = '~/vimwiki/'
 let wiki_1.path_html = '~/vimwiki_html/'
 
 " old github.io experiment
-"let wiki_2 = {}
-"let wiki_2.path = '~/site/'
-"let wiki_2.path_html = '~/site_html/'
-"let wiki_2.template_path = '~/site/templates/'
-"let wiki_2.template_default = 'default'
-"let wiki_2.template_ext = '.html'
+let wiki_2 = {}
+let wiki_2.path = '~/blog/'
+let wiki_2.path_html = '~/blog_html/'
+let wiki_2.template_path = '~/blog/templates/'
+let wiki_2.template_default = 'default'
+let wiki_2.template_ext = '.html'
 
-"let g:vimwiki_list = [wiki_1, wiki_2]
+let g:vimwiki_list = [wiki_1, wiki_2]
 
 " terraform
 let g:terraform_align=1
