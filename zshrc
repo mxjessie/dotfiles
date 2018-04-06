@@ -76,11 +76,57 @@ if [[ -a $HOME/.oh-my-zsh ]]; then
     zstyle :omz:plugins:ssh-agent agent-forwarding on
     source $ZSH/oh-my-zsh.sh
 else
+    # cd with just a dir name
+    setopt autocd
+    # fancy globs
+    setopt extendedglob
+    
+    # enable autocompletions
     zmodload zsh/complete
     zmodload zsh/computil
     zmodload zsh/complist
     zmodload zsh/compctl
     autoload -Uz compinit && compinit
+    #zstyle :completion::complete:-command-:: tag-order local-directories -
+    zstyle ':completion:*' menu select
+    zstyle ':completion:*' insert-tab false
+    setopt COMPLETE_ALIASES
+
+    # prompt.. stuff?
+    #autoload -U promptinit
+    #promptinit
+    autoload -U colors && colors
+    #export PROMPT="%{$fg[magenta]%n%}%{$fg[blue]%}@%{$fg[cyan]%m%}%{$fg[white]%}%B>%b %{$reset_color%}"
+    #export PROMPT="%{$fg[magenta]%n%}%{$fg[blue]%}@%{$fg[cyan]%m%}%{$fg[white]%}> %{$reset_color%}"
+    export PROMPT='%n@%m> '
+
+    # key bindings are fuctup fsr
+    typeset -g -A key
+
+    key[Home]="$terminfo[khome]"
+    key[End]="$terminfo[kend]"
+    key[Insert]="$terminfo[kich1]"
+    key[Backspace]="$terminfo[kbs]"
+    key[Delete]="$terminfo[kdch1]"
+    key[Up]="$terminfo[kcuu1]"
+    key[Down]="$terminfo[kcud1]"
+    key[Left]="$terminfo[kcub1]"
+    key[Right]="$terminfo[kcuf1]"
+    key[PageUp]="$terminfo[kpp]"
+    key[PageDown]="$terminfo[knp]"
+
+    # setup key accordingly
+    [[ -n "$key[Home]"      ]] && bindkey -- "$key[Home]"      beginning-of-line
+    [[ -n "$key[End]"       ]] && bindkey -- "$key[End]"       end-of-line
+    [[ -n "$key[Insert]"    ]] && bindkey -- "$key[Insert]"    overwrite-mode
+    [[ -n "$key[Backspace]" ]] && bindkey -- "$key[Backspace]" backward-delete-char
+    [[ -n "$key[Delete]"    ]] && bindkey -- "$key[Delete]"    delete-char
+    [[ -n "$key[Up]"        ]] && bindkey -- "$key[Up]"        up-line-or-history
+    [[ -n "$key[Down]"      ]] && bindkey -- "$key[Down]"      down-line-or-history
+    [[ -n "$key[Left]"      ]] && bindkey -- "$key[Left]"      backward-char
+    [[ -n "$key[Right]"     ]] && bindkey -- "$key[Right]"     forward-char
+
+    bindkey "^R" history-incremental-pattern-search-backward
 fi
 
 lazy_source sdk $HOME/.sdkman/bin/sdkman-init.sh
@@ -91,6 +137,8 @@ source_this $HOME/.zshrc-work
 
 # do the vte thing to make tilix work more good
 source_this /etc/profile.d/vte.sh
+
+alias ls="ls -G"
 
 # command line jack enhancements
 if cmd_exists 'jack_connect'; then
@@ -129,6 +177,14 @@ if [[ -a $VIMWIKI_PATH ]]; then
     alias note="vim -c VimwikiMakeDiaryNote"
     alias diary="vim -c VimwikiMakeDiaryNote"
     alias notes="vim -c VimwikiDiaryIndex"
+
+    alias blog="vim -c 'let g:vimwiki_list = [wiki_2, wiki_1]' -c VimwikiIndex"
+    alias post="vim -c 'let g:vimwiki_list = [wiki_2, wiki_1]' -c VimwikiMakeDiaryNote"
+    alias posts="vim -c 'let g:vimwiki_list = [wiki_2, wiki_1]' -c VimwikiDiaryIndex"
+fi
+
+if cmd_exists 'ncdu'; then
+    alias ncdu='ncdu -e --color dark'
 fi
 
 # fix for a sorta-bug on os x
@@ -169,6 +225,8 @@ if cmd_exists 'vagrant'; then
 fi
 
 if cmd_exists 'git'; then
+    alias gst='git status'
+    alias gco='git checkout'
     alias git-sanitize='
     git config --local user.name "Jessie";
     git config --local user.email "mxjessie@users.noreply.github.com"'
@@ -199,16 +257,21 @@ if cmd_exists 'tmux'; then alias atmux='tmux -2u attach'; fi
 
 # i usually know what my name is
 DEFAULT_USER='jessie'
+# lines of history to maintain in memory
+export HISTSIZE=1200
+
+# lines of history to maintain in histfile
+export SAVEHIST=100000
+
+export HISTFILE="$HOME/.zsh_history"
 # append rather than overwrite history file.
 setopt APPEND_HISTORY
-# lines of history to maintain in memory
-HISTSIZE=1200                  
-# lines of history to maintain in histfile
-SAVEHIST=100000
 # allow dups, but expire old dups first
 setopt HIST_EXPIRE_DUPS_FIRST
 # save timestamp & runtime info
 setopt EXTENDED_HISTORY
+setopt inc_append_history
+setopt share_history
 # please don,t beeb beeb because i,m sleep ....
 setopt NO_BEEP
 
