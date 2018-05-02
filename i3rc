@@ -106,7 +106,7 @@ $exec blueman-applet
 $exec compton -f --inactive-dim 0.2 -D 8
 $exec redshift-gtk
 #exec xscreensaver -no-splash
-$exec xautolock -time 5 -detectsleep -secure -corners 00+- -cornerdelay 2 -cornerredelay 15 -locker $HOME/bin/xlock
+$exec xautolock -time 5 -detectsleep -corners 00+- -cornerdelay 2 -cornerredelay 15 -locker $HOME/bin/xlock
 $exec claws-mail
 $exec discord
 $exec telegram
