@@ -98,6 +98,7 @@ assign [class="Thunderbird"] 9
 $exec dunst
 $exec $HOME/bin/xwallpaper
 $exec $HOME/.hidpi
+$exec spice-vdagent
 $exec vmware-user-suid-wrapper
 $exec lxpolkit
 $exec ibus-daemon -dr
