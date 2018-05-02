@@ -138,7 +138,7 @@ source_this $HOME/.zshrc-work
 # do the vte thing to make tilix work more good
 source_this /etc/profile.d/vte.sh
 
-alias ls="ls -G"
+alias ls="ls -G --color=yes"
 
 # command line jack enhancements
 if cmd_exists 'jack_connect'; then
@@ -170,6 +170,11 @@ if cmd_exists 'task'; then
     alias tcy="task calendar $(date +%Y)"
 fi
 
+# load autojump
+if [[ -f /usr/share/autojump/autojump.sh ]]; then
+    . /usr/share/autojump/autojump.sh
+fi
+
 # vimwiki aliases
 VIMWIKI_PATH="$HOME/vimwiki"
 if [[ -a $VIMWIKI_PATH ]]; then
@@ -195,6 +200,11 @@ fi
 # i guess golang-1.8 from debian's repos doesn't get put into $PATH by default
 if [[ -a '/usr/lib/go-1.8/bin' ]]; then
     export PATH="$PATH:/usr/lib/go-1.8/bin"
+fi
+
+# set a GOPATH please
+if cmd_exists 'go'; then
+    export GOPATH="$HOME/.go"
 fi
 
 # lazy-load rbenv pls
