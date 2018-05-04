@@ -143,8 +143,8 @@ alias ls="ls -G --color=yes"
 # command line jack enhancements
 if cmd_exists 'jack_connect'; then
     source_this ~/dotfiles/zsh-jack-completion/zsh_jack_completion.sh
-    alias jc="jack_connect"
-    alias jd="jack_disconnect"
+    alias jackcon="jack_connect"
+    alias jackdis="jack_disconnect"
 fi
 
 if cmd_exists 'whois'; then
