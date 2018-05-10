@@ -22,3 +22,6 @@
     path = powerlevel9k
     ignore = all
     url = https://github.com/bhilburn/powerlevel9k
+[submodule "ttf-monofur-powerline"]
+	path = ttf-monofur-powerline
+	url = https://github.com/rsrsl/ttf-monofur-powerline
