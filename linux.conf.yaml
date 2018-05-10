@@ -45,14 +45,23 @@
     ~/.config/xfce4/terminal/colorschemes/monokai-dark.theme:
         create: true
         path: xfce4-terminal-monokai-dark
+    ~/.fonts/monof55.ttf:
+        create: true
+        path: ttf-monofur-powerline/monof55.ttf
+    ~/.fonts/monof56.ttf:
+        create: true
+        path: ttf-monofur-powerline/monof56.ttf
+    ~/.fonts/monofur_powerline.ttf:
+        create: true
+        path: ttf-monofur-powerline/monofur_powerline.ttf
+    ~/.fonts/monofur_italic_powerline.ttf:
+        create: true
+        path: ttf-monofur-powerline/monofur_italic_powerline.ttf
     ~/.taskrc-host:
         create: true
         path: private/taskrc-linux
-    ~/.terminfo/xterm-256color-italic.terminfo:
-        create: true
-        path: xterm-256color-italic.terminfo
     ~/.Xresources:
     ~/.xscreensaver:
 
 - shell:
-  - [tic ~/.terminfo/xterm-256color-italic.terminfo]
+  - [fc-cache $HOME/.fonts]
