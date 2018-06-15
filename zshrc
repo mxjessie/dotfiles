@@ -131,14 +131,10 @@ fi
 
 lazy_source sdk $HOME/.sdkman/bin/sdkman-init.sh
 lazy_source cargo $HOME/.cargo/env
-source_this /usr/local/bin/aws_zsh_completer.sh
-source_this $HOME/Library/Python/3.6/bin/aws_zsh_completer.sh
 source_this $HOME/.zshrc-work
 
 # do the vte thing to make tilix work more good
 source_this /etc/profile.d/vte.sh
-
-alias ls="ls -G --color=yes"
 
 # command line jack enhancements
 if cmd_exists 'jack_connect'; then
@@ -173,6 +169,8 @@ fi
 # load autojump
 if [[ -f /usr/share/autojump/autojump.sh ]]; then
     . /usr/share/autojump/autojump.sh
+elif [[ -f /usr/local/share/autojump/autojump.zsh ]]; then
+    . /usr/local/share/autojump/autojump.zsh
 fi
 
 # vimwiki aliases
