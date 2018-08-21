@@ -65,6 +65,16 @@ bindsym XF86MonBrightnessDown $exec xbacklight -dec 5
 #bindsym XF86KbdBrightnessUp
 #bindsym XF86KbdBrightnessDown
 
+# media keys
+bindsym XF86AudioPrev $exec playerctl next
+bindsym XF86AudioNext $exec playerctl previous 
+bindsym XF86AudioPlay $exec playerctl play 
+bindsym XF86AudioStop $exec playerctl play-pause 
+
+# volume keys
+bindsym XF86AudioRaiseVolume $exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume $exec amixer sset Master 5%-
+
 # touchpad toggle
 bindsym XF86TouchpadToggle $exec $HOME/bin/tp-toggle
 
@@ -143,10 +153,12 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, FIBONACCI)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split # original
+# original
+#bindsym $mod+e layout toggle split
 
 # kill focused window
-#bindsym $mod+Shift+q kill # original
+# original
+#bindsym $mod+Shift+q kill
 
 # let's try fibonacci splits
 default_orientation vertical
@@ -230,48 +242,3 @@ bar {
         urgent_workspace   $base08 $base03 $base05
     }
 }
-
-### i3-gaps stuff ###
-# i don't remember why i got so excited about i3-gaps
-#gaps inner 12
-#gaps outer -2
-#
-#set $mode_gaps Gaps: (o) outer, (i) inner
-#set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-#set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-## collides with googling
-#bindsym $mod+Shift+g mode "$mode_gaps"
-#
-#mode "$mode_gaps" {
-#        bindsym o      mode "$mode_gaps_outer"
-#        bindsym i      mode "$mode_gaps_inner"
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-#
-#mode "$mode_gaps_inner" {
-#        bindsym plus  gaps inner current plus 5
-#        bindsym minus gaps inner current minus 5
-#        bindsym 0     gaps inner current set 0
-#
-#        bindsym Shift+plus  gaps inner all plus 5
-#        bindsym Shift+minus gaps inner all minus 5
-#        bindsym Shift+0     gaps inner all set 0
-#
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-#
-#mode "$mode_gaps_outer" {
-#        bindsym plus  gaps outer current plus 5
-#        bindsym minus gaps outer current minus 5
-#        bindsym 0     gaps outer current set 0
-#
-#        bindsym Shift+plus  gaps outer all plus 5
-#        bindsym Shift+minus gaps outer all minus 5
-#        bindsym Shift+0     gaps outer all set 0
-#
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-#
