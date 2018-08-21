@@ -200,6 +200,11 @@ if [[ -a '/usr/lib/go-1.8/bin' ]]; then
     export PATH="$PATH:/usr/lib/go-1.8/bin"
 fi
 
+if [[ -a "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+fi
+
 # set a GOPATH please
 if cmd_exists 'go'; then
     export GOPATH="$HOME/.go"
