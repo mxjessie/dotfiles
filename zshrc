@@ -131,7 +131,6 @@ fi
 
 lazy_source sdk $HOME/.sdkman/bin/sdkman-init.sh
 lazy_source cargo $HOME/.cargo/env
-source_this $HOME/.zshrc-work
 
 # do the vte thing to make tilix work more good
 source_this /etc/profile.d/vte.sh
@@ -287,3 +286,5 @@ setopt NO_BEEP
 bindkey ' ' expand-ealias
 bindkey '^ ' magic-space
 bindkey -M isearch " " magic-space
+
+source_this $HOME/.zshrc-work
