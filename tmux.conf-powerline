@@ -7,3 +7,6 @@ if-shell "[ -e /usr/share/powerline/bindings/tmux/powerline.conf ]" \
 
 if-shell "[ -e /usr/local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf ]" \
     "source /usr/local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf"
+
+if-shell "[ -e /usr/local/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf ]" \
+    "source /usr/local/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf"
