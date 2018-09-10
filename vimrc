@@ -4,7 +4,7 @@ set nocp  " be youw twue sewf
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 "Plugin 'arcticicestudio/nord-vim'
 Plugin 'chrisbra/Colorizer'
 Plugin 'easymotion/vim-easymotion'
@@ -25,7 +25,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
-Plugin 'tssm/fairyfloss.vim'
+"Plugin 'tssm/fairyfloss.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vimwiki/vimwiki'
 Plugin 'VundleVim/Vundle.vim'
@@ -44,10 +44,11 @@ endif
 "let g:nord_italic = 1
 "let g:nord_italic_comments = 1
 "let g:nord_comment_brightness = 12
-colorscheme fairyfloss
+colorscheme solarized
 set background=dark
 hi Normal ctermbg=none
-highlight ColorColumn ctermbg=0 guibg=lightmagenta
+" fairyfloss's colorcolumn was wonky
+" highlight ColorColumn ctermbg=0 guibg=lightmagenta
 " don't really care about capitalization
 set spellcapcheck=""
 " just underlines for the spellchecker, please
