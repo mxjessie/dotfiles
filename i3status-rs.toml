@@ -1,9 +1,5 @@
 [theme]
-#name = "solarized-dark"
-name = "slick"
-[theme.overrides]
-idle_bg = "#585858"
-idle_fg = "#f8f8f2"
+name = "solarized-dark"
 
 [icons]
 name = "awesome"
