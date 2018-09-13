@@ -35,20 +35,9 @@ filetype plugin indent on
 syntax on
 set t_ut=  " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 
-if has("termguicolors")
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
-"let g:nord_italic = 1
-"let g:nord_italic_comments = 1
-"let g:nord_comment_brightness = 12
-colorscheme solarized
 set background=dark
+colorscheme solarized
 hi Normal ctermbg=none
-" fairyfloss's colorcolumn was wonky
-" highlight ColorColumn ctermbg=0 guibg=lightmagenta
 " don't really care about capitalization
 set spellcapcheck=""
 " just underlines for the spellchecker, please
