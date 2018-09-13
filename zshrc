@@ -209,12 +209,9 @@ if cmd_exists 'go'; then
     export GOPATH="$HOME/.go"
 fi
 
-# lazy-load rbenv pls
+# load rbenv .. don't lazyload it, though
 if cmd_exists 'rbenv'; then
-    rbenv() {
-        eval "$(command rbenv init -)"
-        rbenv "$@"
-    }
+    eval "$(command rbenv init -)"
 fi
 
 # ssh fixes for custom termcaps
