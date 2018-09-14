@@ -7,8 +7,8 @@ scrollback:
 
 window:
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 160
+    lines: 50
 
   padding:
     x: 2
@@ -33,7 +33,7 @@ font:
     family: Liberation Mono for Powerline
     style: Italic
 
-  size: 16.0
+  size: 14.0
 
   offset:
     x: 0
@@ -42,6 +42,8 @@ font:
   glyph_offset:
     x: 0
     y: 0
+
+  scale_with_dpi: true
 
   use_thin_strokes: true
 
