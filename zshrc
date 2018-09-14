@@ -189,6 +189,12 @@ if cmd_exists 'ncdu'; then
     alias ncdu='ncdu -e --color dark'
 fi
 
+# oontz oontz
+if cmd_exists 'mpv'; then
+    alias agonist='mpv -playlist http://www.triplag.com/webradio/darkpsy/triplag-darkpsy-playlist.pls'
+    alias antagonist='mpv -playlist http://www.triplag.com/webradio/chilltrip/triplag-chilltrip-playlist.pls'
+fi
+
 # fix for a sorta-bug on os x
 if [[ -a '/usr/local/sbin/mtr' ]]; then
     alias mtr='PATH=/usr/local/sbin:$PATH sudo mtr --displaymode 2 -netz'
@@ -212,6 +218,11 @@ fi
 # load rbenv .. don't lazyload it, though
 if cmd_exists 'rbenv'; then
     eval "$(command rbenv init -)"
+fi
+
+# load pyenv. apparently i never set this up
+if cmd_exists 'pyenv'; then
+    eval "$(command pyenv init -)"
 fi
 
 # ssh fixes for custom termcaps
