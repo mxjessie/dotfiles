@@ -5,9 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.irssi/config:
-        create: true
-        path: private/irssirc
     ~/.config/pulse/client.conf: 
         create: true
         path: pulse-client.conf
