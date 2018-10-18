@@ -15,9 +15,6 @@
     ~/.ipython/profile_default/ipython_config.py:
         create: true
         path: ipython_config.py
-    ~/.irssi/config:
-        create: true
-        path: private/irssirc
     ~/.jupyter/jupyter_notebook_config.py:
         create: true
         path: jupyter_notebook_config.py
