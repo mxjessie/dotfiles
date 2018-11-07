@@ -31,6 +31,12 @@
     ~/.pryrc:
     ~/.puppet-lint.rc:
     ~/.rspec:
+    ~/.ssh/config:
+        create: true
+        path: ssh-config
+    ~/.ssh/config.d/base:
+        create: true
+        path: private/ssh-config-base
     ~/.taskrc:
         create: true
         path: private/taskrc
