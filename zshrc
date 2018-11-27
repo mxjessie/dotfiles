@@ -213,6 +213,7 @@ fi
 # set a GOPATH please
 if cmd_exists 'go'; then
     export GOPATH="$HOME/.go"
+    export PATH=$PATH:"$GOPATH/bin"
 fi
 
 # load rbenv .. don't lazyload it, though
@@ -269,6 +270,10 @@ if cmd_exists 'cargo'; then
     fi
 fi
 
+if cmd_exists 'update-repos'; then
+    export GIT_REPOS="$GIT_REPOS $HOME/bin $HOME/dotfiles $HOME/dotfiles/* $HOME/Code/* $HOME/Code/personal/*"
+fi
+
 # whoa dude
 if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat -t"; fi
 
@@ -300,4 +305,5 @@ bindkey ' ' expand-ealias
 bindkey '^ ' magic-space
 bindkey -M isearch " " magic-space
 
+# doing hte busyness
 source_this $HOME/.zshrc-work
