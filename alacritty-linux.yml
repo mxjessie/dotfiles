@@ -1,9 +1,11 @@
 env:
   TERM: xterm-256color
 
-scrollback:
-  enabled: true
+scrolling:
   max_lines: 10000
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: false
 
 window:
   dimensions:
@@ -14,7 +16,7 @@ window:
     x: 2
     y: 2
 
-  decorations: true
+  decorations: full
 
 tabspaces: 4
 
@@ -22,18 +24,18 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Liberation Mono for Powerline
+    family: monofur for Powerline
     style: Regular
 
   bold:
-    family: Liberation Mono for Powerline
+    family: monofur for Powerline
     style: Bold
 
   italic:
-    family: Liberation Mono for Powerline
+    family: monofur for Powerline
     style: Italic
 
-  size: 9.0
+  size: 11.0
 
   offset:
     x: 0
@@ -49,7 +51,7 @@ font:
 
 render_timer: false
 
-custom_cursor_colors: true
+#custom_cursor_colors: true
 
 # Colors (Solarized Dark)
 colors:
@@ -149,15 +151,20 @@ mouse_bindings:
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
+  hide_when_typing: true
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-hide_cursor_when_typing: false
-
-cursor_style: Beam
-
+cursor:
+  style: Block
+  unfocused_hollow: true
+  url:
+    launcher: xdg-open
+    
 live_config_reload: true
+
+dynamic_title: true
 
 shell:
   program: /bin/zsh
