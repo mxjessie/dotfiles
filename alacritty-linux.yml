@@ -2,25 +2,27 @@ env:
   TERM: xterm-256color
 
 scrolling:
-  max_lines: 10000
-  multiplier: 3
-  faux_multiplier: 3
+  history: 10000
+  multiplier: 1
+  faux_multiplier: 1
   auto_scroll: false
 
 window:
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 160
+    lines: 509
 
   padding:
     x: 2
     y: 2
 
+  dynamic_padding: true
+
   decorations: full
 
-tabspaces: 4
+  start_maximized: true
 
-draw_bold_text_with_bright_colors: true
+tabspaces: 4
 
 font:
   normal:
@@ -45,13 +47,13 @@ font:
     x: 0
     y: 0
 
-  scale_with_dpi: false
-
   use_thin_strokes: true
 
 render_timer: false
 
-#custom_cursor_colors: true
+persistent_logging: false
+
+draw_bold_text_with_bright_colors: true
 
 # Colors (Solarized Dark)
 colors:
@@ -59,7 +61,6 @@ colors:
   primary:
     background: '0x002b36'
     foreground: '0x839496'
-
   # Normal colors
   normal:
     black:   '0x073642'
@@ -70,7 +71,6 @@ colors:
     magenta: '0xd33682'
     cyan:    '0x2aa198'
     white:   '0xeee8d5'
-
   # Bright colors
   bright:
     black:   '0x002b36'
@@ -81,10 +81,12 @@ colors:
     magenta: '0x6c71c4'
     cyan:    '0x93a1a1'
     white:   '0xfdf6e3'
+  indexed_colors: []
 
 visual_bell:
   animation: EaseOutExpo
-  duration: 50
+  duration: 100
+  color: '0x073642'
 
 background_opacity: 1.0
 
@@ -152,6 +154,8 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
   hide_when_typing: true
+  url:
+    modifiers: Control
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -159,9 +163,7 @@ selection:
 cursor:
   style: Block
   unfocused_hollow: true
-  url:
-    launcher: xdg-open
-    
+
 live_config_reload: true
 
 dynamic_title: true

@@ -1,9 +1,11 @@
 env:
   TERM: xterm-256color
 
-scrollback:
-  enabled: true
-  max_lines: 10000
+scrolling:
+  history: 10000
+  multiplier: 1
+  faux_multiplier: 1
+  auto_scroll: false
 
 window:
   dimensions:
@@ -14,11 +16,13 @@ window:
     x: 2
     y: 2
 
-  decorations: true
+  dynamic_padding: true
+
+  decorations: full
+
+  start_maximized: true
 
 tabspaces: 4
-
-draw_bold_text_with_bright_colors: true
 
 font:
   normal:
@@ -43,13 +47,13 @@ font:
     x: 0
     y: 0
 
-  scale_with_dpi: true
-
   use_thin_strokes: true
 
 render_timer: false
 
-custom_cursor_colors: true
+persistent_logging: false
+
+draw_bold_text_with_bright_colors: true
 
 # Colors (Solarized Dark)
 colors:
@@ -77,10 +81,12 @@ colors:
     magenta: '0x6c71c4'
     cyan:    '0x93a1a1'
     white:   '0xfdf6e3'
+  indexed_colors: []
 
 visual_bell:
   animation: EaseOutExpo
-  duration: 50
+  duration: 100
+  color: '0x073642'
 
 background_opacity: 1.0
 
@@ -148,15 +154,19 @@ mouse_bindings:
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
+  hide_when_typing: false
+  url:
+    modifiers: Command
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-hide_cursor_when_typing: false
-
-cursor_style: Beam
+cursor:
+  style: Beam
 
 live_config_reload: true
+
+dynamic_title: true
 
 shell:
   program: /bin/zsh
