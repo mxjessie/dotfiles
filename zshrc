@@ -223,6 +223,8 @@ fi
 
 # load pyenv. apparently i never set this up
 if cmd_exists 'pyenv'; then
+    # YouCompleteMe has started complaining about this, so..
+    export PYTHON_CONFIGURE_OPTS="--enable-framework"
     eval "$(command pyenv init -)"
 fi
 
