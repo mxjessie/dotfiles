@@ -4,31 +4,31 @@ set nocp  " be youw twue sewf
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'arcticicestudio/nord-vim'
-Plugin 'chrisbra/Colorizer'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'fatih/vim-go'
-Plugin 'hashivim/vim-terraform'
-Plugin 'hashivim/vim-vagrant'
-Plugin 'nathanielc/vim-tickscript' 
-Plugin 'rodjek/vim-puppet'
-Plugin 'rust-lang/rust.vim'
-Plugin 'sbl/scvim'
-Plugin 'scrooloose/syntastic'
-Plugin 'stevearc/vim-arduino'
-"Plugin 'sheerun/vim-polyglot'
-"Plugin 'sickill/vim-monokai'
-Plugin 'solarnz/thrift.vim'
-Plugin 'tfnico/vim-gradle'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
-"Plugin 'tssm/fairyfloss.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vimwiki/vimwiki'
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'   " theme
+"Plugin 'arcticicestudio/nord-vim'          " theme
+Plugin 'chrisbra/Colorizer'                 " colorize hexadecimal colors
+Plugin 'easymotion/vim-easymotion'          " rapid cursor movement i never use
+Plugin 'fatih/vim-go'                       " language enhancement
+Plugin 'hashivim/vim-terraform'             " language enhancement
+Plugin 'hashivim/vim-vagrant'               " language enhancement
+Plugin 'nathanielc/vim-tickscript'          " language enhancement
+Plugin 'rodjek/vim-puppet'                  " language enhancement
+Plugin 'rust-lang/rust.vim'                 " language enhancement
+Plugin 'sbl/scvim'                          " language enhancement
+Plugin 'scrooloose/syntastic'               " linting & syntax checking
+Plugin 'stevearc/vim-arduino'               " language enhancement
+"Plugin 'sheerun/vim-polyglot'              " language enhancements
+"Plugin 'sickill/vim-monokai'               " theme
+Plugin 'solarnz/thrift.vim'                 " language enhancement
+Plugin 'tfnico/vim-gradle'                  " language enhancement
+Plugin 'tmhedberg/SimpylFold'               " automagic code folding
+Plugin 'tpope/vim-fugitive'                 " git extensions i never use
+Plugin 'tpope/vim-unimpaired'               " extensions i never use
+Plugin 'tpope/vim-vinegar'                  " lightweight file tree browser
+"Plugin 'tssm/fairyfloss.vim'               " theme
+Plugin 'Valloric/YouCompleteMe'             " autocomplete & code introspection
+Plugin 'vimwiki/vimwiki'                    " note-taking & personal wiki
+Plugin 'VundleVim/Vundle.vim'               " plugin mgmt for all of the above
 call vundle#end()
 
 filetype plugin indent on
@@ -53,8 +53,9 @@ set bs=2
 set softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
 set cc=80 " colored ruler at 80 chars
 
-" enable docstrings for folded code
+" enable docstrings for folded code and default to open folds
 let g:SimpylFold_docstring_preview=1
+set foldlevelstart=20
 
 set ruler
 set showmode
@@ -121,7 +122,7 @@ elseif has('python')
 endif
 
 " pretty json diffing
-command PPJson %!python -m json.tool
+command PPJson set syntax=json | %!python -m json.tool
 
 " once a year i have to fiddle with line endings
 command FTypeUnix e ++ff=unix
