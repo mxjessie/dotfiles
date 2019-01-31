@@ -92,6 +92,7 @@ for_window [class="mpv"] floating enable
 for_window [class="obs"] floating enable
 for_window [instance="speedcrunch"] floating enable, border normal
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable, border normal
+for_window [class="Thunderbird" window_role="filterlist"] floating enable, border normal
 for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
 
 #rename workspace 8 to 8: social
@@ -106,7 +107,7 @@ assign [class="Thunderbird"] 9
 
 ### startup stuff
 $exec dunst
-$exec $HOME/bin/xwallpaper
+$exec $HOME/.fehbg
 $exec $HOME/.hidpi
 $exec spice-vdagent
 $exec vmware-user-suid-wrapper
@@ -180,11 +181,17 @@ bindsym $mod+c focus child
 
 # cycle through workspaces
 bindsym $mod+Tab workspace next
+bindsym $mod+Control+Right workspace next
 bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Control+Left workspace prev
 
 #window switcher
 bindsym $alt+Tab $exec rofi -show window
 bindsym $alt+Shift+Tab rofi -show windowcd
+
+# move workspace to output
+bindsym $mod+Shift+Control+Left move workspace to output left
+bindsym $mod+Shift+Control+Right move workspace to output right
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
