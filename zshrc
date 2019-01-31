@@ -272,6 +272,11 @@ if cmd_exists 'cargo'; then
     fi
 fi
 
+# hey we're on a mac
+if cmd_exists 'osascript'; then
+    alias stfu='osascript -e "set Volume 0"'
+fi
+
 if cmd_exists 'update-repos'; then
     export GIT_REPOS="$GIT_REPOS $HOME/bin $HOME/dotfiles $HOME/dotfiles/* $HOME/Code/* $HOME/Code/personal/*"
 fi
