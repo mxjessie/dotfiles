@@ -10,7 +10,7 @@ scrolling:
 window:
   dimensions:
     columns: 160
-    lines: 509
+    lines: 50
 
   padding:
     x: 2
