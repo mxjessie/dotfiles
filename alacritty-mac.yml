@@ -26,16 +26,16 @@ tabspaces: 4
 
 font:
   normal:
-    family: monofur for Powerline
-    style: Regular
+    family: Monofur Nerd Font
+    style: Book
 
   bold:
-    family: monofur for Powerline
-    style:  bold
+    family: Monofurbold Nerd Font
+    style: bold
 
   italic:
-    family: monofur for Powerline
-    style:  italic
+    family: Monofuritalic Nerd Font
+    style: italic
 
   size: 17.0
 
