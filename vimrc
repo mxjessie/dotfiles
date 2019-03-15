@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'chrisbra/Colorizer'                 " colorize hexadecimal colors
 Plugin 'easymotion/vim-easymotion'          " rapid cursor movement i never use
 Plugin 'fatih/vim-go'                       " language enhancement
+Plugin 'fidian/hexmode'                     " hex editing enhancement
 Plugin 'hashivim/vim-terraform'             " language enhancement
 Plugin 'hashivim/vim-vagrant'               " language enhancement
 Plugin 'nathanielc/vim-tickscript'          " language enhancement

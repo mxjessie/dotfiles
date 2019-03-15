@@ -152,17 +152,20 @@ fi
 
 # reminders
 if cmd_exists 'task'; then
-    task active
     alias tac="task active"
     # burnout charts
     alias tbw="task burndown.weekly"
     alias tbd="task burndown.daily"
+    alias ta="task add"
     alias tap="task add +personal"
+    alias tas="task add start:now"
     alias taw="task add +work"
     alias taps="task add +personal start:now"
     alias taws="task add +work start:now"
     alias tc="task calendar"
     alias tcy="task calendar $(date +%Y)"
+    # barf Current Status to terminal
+    task active
 fi
 
 # load autojump
