@@ -17,5 +17,6 @@ add_to_path $HOME/.gem/ruby/2.3.0/bin
 add_to_path $HOME/Library/Python/2.7/bin
 add_to_path $HOME/Library/Python/3.5/bin
 add_to_path $HOME/Library/Python/3.6/bin
+add_to_path /opt/puppetlabs/bin
 
 export EDITOR="vim"
