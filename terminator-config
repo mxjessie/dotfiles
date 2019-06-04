@@ -1,10 +1,9 @@
 [global_config]
-  extra_styling = False
+  dbus = False
   focus = mouse
-  inactive_color_offset = 0.6
+  hide_from_taskbar = True
   scroll_tabbar = True
-  title_font = Inconsolata Medium 10
-  title_hide_sizetext = True
+  title_font = monofur for Powerline 10
   title_inactive_bg_color = "#272822"
   title_inactive_fg_color = "#ae81ff"
   title_receive_bg_color = "#f92672"
@@ -25,10 +24,11 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#272822"
+    background_color = "#5a5475"
     cursor_color = "#ffffff"
-    font = Inconsolata Medium 11
+    font = monofur for Powerline 11
     foreground_color = "#f8f8f2"
-    palette = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5:#272822:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5"
+    palette = "#3b3a32:#f1756f:#6de874:#e6c000:#a381ff:#ff87b1:#7ef5b8:#c7b7c7:#685868:#ff9f9a:#7bfa81:#ffea00:#c5a3ff:#ffb8d1:#c2ffdf:#ffefff"
+    scrollback_lines = 100000
     scrollbar_position = hidden
     use_system_font = False

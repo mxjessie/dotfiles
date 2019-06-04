@@ -18,13 +18,15 @@ set $base0D #66d9ef
 set $base0E #ae81ff
 set $base0F #cc6633
 
-set $exec exec --no-startup-id
-
 # win key
 set $mod Mod4
 set $alt Mod1
-set $font pango:Inconsolata Medium 10
+set $font pango:monofur for Powerline Regular 10
 font $font
+
+# convenience shortcuts
+set $exec exec --no-startup-id
+set $input exec --no-startup-id i3-input -f "pango:monofur For Powerline Regular 10"
 
 floating_modifier $mod
 new_window pixel 2
@@ -45,11 +47,12 @@ client.urgent               $base02 $base08 $base07 $base08
 ### app launcher shortcuts
 # terminals
 bindsym $mod+Shift+Return $exec i3-sensible-terminal
-bindsym $mod+Return $exec $HOME/.cargo/bin/alacritty
+bindsym $mod+Return $exec i3-sensible-terminal
+#bindsym $mod+Return $exec $HOME/.cargo/bin/alacritty
 
 # search shortcuts
-#bindsym $mod+g $exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
-#bindsym $mod+Shift+g $exec i3-input -f $font -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
+bindsym $mod+g $input -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
+bindsym $mod+Shift+g $input -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
 
 # screenshot tools!
 bindsym --release Print $exec "maim $HOME/Pictures/Screenshots/$(date +%s_%Y%m%d-%H%m%S.png)"
@@ -94,6 +97,7 @@ for_window [instance="speedcrunch"] floating enable, border normal
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable, border normal
 for_window [class="Thunderbird" window_role="filterlist"] floating enable, border normal
 for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
+#for_window [class="x-terminal-emulator" name='Terminator Preferences'] floating enable
 
 #rename workspace 8 to 8: social
 assign [class="TelegramDesktop"] 8

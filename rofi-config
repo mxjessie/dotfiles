@@ -1,5 +1,5 @@
 rofi.columns: 1
-rofi.font: Liberation Mono Medium 10
+rofi.font: monofur for Powerline Regular 12
 rofi.lines: 15
 rofi.modi: run,window,windowcd,ssh
 rofi.terminal: i3-sensible-terminal
