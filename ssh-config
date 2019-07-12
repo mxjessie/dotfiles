@@ -1,4 +1,4 @@
 Include config.d/*
 
 Host *
-    TCPKeepAlive yes
+    ServerAliveInterval 10
