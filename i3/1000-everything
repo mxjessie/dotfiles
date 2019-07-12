@@ -133,7 +133,8 @@ $exec pk-update-icon
 # start dmenu (a program launcher)
 #bindsym $mod+d $exec dmenu_run
 # bindsym $mod+d $exec i3-dmenu-desktop
-bindsym $mod+d $exec zsh -c "rofi -show run"
+bindsym $mod+d $exec zsh -c "rofi -show run -display-run '➡ '"
+bindsym $mod+Shift+d $exec zsh -c "rofi -show ssh -display-ssh '🖧 '"
 bindsym XF86Launch1 $exec speedcrunch
 
 # change focus
