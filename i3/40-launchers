@@ -1,0 +1,52 @@
+####
+#### keybinding launchers
+####
+
+# rofi is an app launcher
+bindsym $mod+d $exec zsh -c "rofi -show run -display-run '➡ '"
+
+# .. and ssh session launcher
+bindsym $mod+Shift+d $exec zsh -c "rofi -show ssh -display-ssh '🖧 '"
+
+# .. and window switcher
+bindsym $alt+Tab $exec rofi -show window
+bindsym $alt+Shift+Tab rofi -show windowcd
+
+# terminals
+bindsym $mod+Return $exec i3-sensible-terminal
+bindsym $mod+Shift+Return $exec $HOME/.cargo/bin/alacritty
+
+# search shortcuts
+bindsym $mod+g $input -F 'exec --no-startup-id sensible-browser "https://google.com/search?q=%s"' -P '🔍 '
+bindsym $mod+Shift+g $input -F 'exec --no-startup-id sensible-browser "%s"' -P '🌐 '
+
+# take screenshots
+bindsym --release Print $exec "maim $HOME/Pictures/Screenshots/$(date +%s_%Y%m%d-%H%m%S.png)"
+bindsym --release Shift+Print $exec "maim -s $HOME/Pictures/Screenshots/$(date +%s_%Y%m%d-%H%m%S.png)"
+
+# lock the screen
+bindsym $mod+Shift+l $exec $HOME/bin/xlock
+bindsym XF86ScreenSaver $exec $HOME/bin/xlock
+
+# brightness
+bindsym XF86MonBrightnessUp $exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown $exec xbacklight -dec 5
+#bindsym XF86KbdBrightnessUp
+#bindsym XF86KbdBrightnessDown
+
+# media keys
+bindsym XF86AudioPrev $exec playerctl next
+bindsym XF86AudioNext $exec playerctl previous 
+bindsym XF86AudioPlay $exec playerctl play 
+bindsym XF86AudioStop $exec playerctl play-pause 
+
+# volume keys
+bindsym XF86AudioRaiseVolume $exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume $exec amixer sset Master 5%-
+
+# touchpad toggle
+bindsym XF86TouchpadToggle $exec $HOME/bin/tp-toggle
+
+# calculator button i guesss
+bindsym XF86Launch1 $exec speedcrunch
+

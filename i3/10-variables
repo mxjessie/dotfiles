@@ -1,0 +1,13 @@
+####
+#### global variable definitions
+####
+
+# win key
+set $mod Mod4
+set $alt Mod1
+set $font pango:monofur for Powerline Regular 10
+
+# convenience shortcuts
+set $exec exec --no-startup-id
+set $input exec --no-startup-id i3-input -f "pango:monofur For Powerline Regular 10"
+

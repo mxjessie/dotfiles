@@ -5,13 +5,14 @@ set nocp  " be youw twue sewf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin 'altercation/vim-colors-solarized'   " theme
-"Plugin 'arcticicestudio/nord-vim'          " theme
+"Plugin 'arcticicestudio/nord-vim'           " theme
 Plugin 'chrisbra/Colorizer'                 " colorize hexadecimal colors
 Plugin 'easymotion/vim-easymotion'          " rapid cursor movement i never use
 Plugin 'fatih/vim-go'                       " language enhancement
 Plugin 'fidian/hexmode'                     " hex editing enhancement
 Plugin 'hashivim/vim-terraform'             " language enhancement
 Plugin 'hashivim/vim-vagrant'               " language enhancement
+Plugin 'morhetz/gruvbox'                    " Theme
 Plugin 'nathanielc/vim-tickscript'          " language enhancement
 Plugin 'rodjek/vim-puppet'                  " language enhancement
 Plugin 'rust-lang/rust.vim'                 " language enhancement
@@ -26,7 +27,7 @@ Plugin 'tmhedberg/SimpylFold'               " automagic code folding
 Plugin 'tpope/vim-fugitive'                 " git extensions i never use
 Plugin 'tpope/vim-unimpaired'               " extensions i never use
 Plugin 'tpope/vim-vinegar'                  " lightweight file tree browser
-Plugin 'tssm/fairyfloss.vim'               " theme
+"Plugin 'tssm/fairyfloss.vim'               " theme
 Plugin 'Valloric/YouCompleteMe'             " autocomplete & code introspection
 Plugin 'vimwiki/vimwiki'                    " note-taking & personal wiki
 Plugin 'VundleVim/Vundle.vim'               " plugin mgmt for all of the above
@@ -37,7 +38,7 @@ syntax on
 set t_ut=  " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 
 set background=dark
-colorscheme fairyfloss
+colorscheme gruvbox
 hi Normal ctermbg=none
 " don't really care about capitalization
 set spellcapcheck=""

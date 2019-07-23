@@ -1,17 +1,29 @@
 [global_config]
   dbus = False
   focus = mouse
-  hide_from_taskbar = True
   scroll_tabbar = True
-  title_font = monofur for Powerline 10
-  title_inactive_bg_color = "#272822"
-  title_inactive_fg_color = "#ae81ff"
-  title_receive_bg_color = "#f92672"
-  title_receive_fg_color = "#f9f8f5"
-  title_transmit_bg_color = "#ae81ff"
-  title_transmit_fg_color = "#f9f8f5"
+  hide_from_taskbar = True
+  title_transmit_fg_color = "#1d2021"
+  title_transmit_bg_color = "#689d68"
+  title_receive_fg_color = "#cc241d"
+  title_receive_bg_color = "#282828"
+  title_inactive_fg_color = "#1d2021"
+  title_inactive_bg_color = "#d77921"
   title_use_system_font = False
+  title_font = monofur for Powerline 10
 [keybindings]
+[profiles]
+  [[default]]
+    visible_bell = True
+    urgent_bell = True
+    background_color = "#282828"
+    cursor_color = "#ffffff"
+    font = monofur for Powerline 11
+    foreground_color = "#ebdbb2"
+    scrollbar_position = hidden
+    scrollback_lines = 100000
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -22,13 +34,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#5a5475"
-    cursor_color = "#ffffff"
-    font = monofur for Powerline 11
-    foreground_color = "#f8f8f2"
-    palette = "#3b3a32:#f1756f:#6de874:#e6c000:#a381ff:#ff87b1:#7ef5b8:#c7b7c7:#685868:#ff9f9a:#7bfa81:#ffea00:#c5a3ff:#ffb8d1:#c2ffdf:#ffefff"
-    scrollback_lines = 100000
-    scrollbar_position = hidden
-    use_system_font = False

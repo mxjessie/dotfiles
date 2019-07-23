@@ -1,0 +1,44 @@
+####
+#### things to start on login
+####
+
+# popup notification daemon
+$exec dunst
+# reset the last wallpaper set with 'feh'
+$exec $HOME/.fehbg
+# some script for doing stuff for high-dpi systems
+$exec $HOME/.hidpi
+# spice guest agent
+$exec spice-vdagent
+# vmware user wrapper, for nicer behavior in VMs
+$exec vmware-user-suid-wrapper
+# lightweight policybus daemon
+$exec lxpolkit
+# input method framework
+$exec ibus-daemon -dr
+# networkmanager applet
+$exec nm-applet
+# bluetooth applet
+$exec blueman-applet
+# unnecessary eye candy
+$exec compton -f -D 8
+# f.lux-like screen deblueing
+$exec redshift-gtk
+# screensaver daemon
+#exec xscreensaver -no-splash
+$exec xautolock -time 5 -detectsleep -corners 00+- -cornerdelay 2 -cornerredelay 15 -locker $HOME/bin/xlock
+# a mail client
+$exec claws-mail
+# another mail client, because i am terminally indecisive
+$exec thunderbird
+# a chat client
+$exec discord
+# another chat client
+$exec telegram
+# another another chat client
+$exec signal-desktop
+# another another another chat client (i miss pidgin)
+$exec slack
+# software update notifier nagbox
+$exec pk-update-icon
+
