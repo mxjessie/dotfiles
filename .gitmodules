@@ -18,10 +18,11 @@
     ignore = all
     url = https://github.com/wrl/zsh-jack-completion
 
-[submodule "powerlevel9k"]
-    path = powerlevel9k
+[submodule "powerlevel10k"]
+	path = powerlevel10k
     ignore = all
-    url = https://github.com/bhilburn/powerlevel9k
+	url = https://github.com/romkatv/powerlevel10k
+
 [submodule "ttf-monofur-powerline"]
-	path = ttf-monofur-powerline
-	url = https://github.com/rsrsl/ttf-monofur-powerline
+    path = ttf-monofur-powerline
+    url = https://github.com/rsrsl/ttf-monofur-powerline

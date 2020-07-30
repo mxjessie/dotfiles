@@ -51,8 +51,8 @@ zle -N expand-ealias
 # oh-my-zsh setup
 if [[ -a $HOME/.oh-my-zsh ]]; then
     export ZSH=$HOME/.oh-my-zsh
-    if [[ -a $HOME/.oh-my-zsh/custom/themes/powerlevel9k ]]; then
-        ZSH_THEME="powerlevel9k/powerlevel9k"
+    if [[ -a $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]]; then
+        ZSH_THEME="powerlevel10k/powerlevel10k"
         POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir background_jobs_joined vcs status)
         POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery time)
         POWERLEVEL9K_BATTERY_ICON=""
