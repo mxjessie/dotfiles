@@ -290,6 +290,14 @@ if cmd_exists 'lolcat'; then alias lsd="ls -hal | lolcat -t"; fi
 # old tmux muscle memory
 if cmd_exists 'tmux'; then alias atmux='tmux -2u attach'; fi
 
+# physics time
+if [[ -a $HOME/EPICS ]]; then
+    export EPICS_BASE=${HOME}/EPICS/epics-base
+    export EPICS_HOST_ARCH=$(${EPICS_BASE}/startup/EpicsHostArch)
+    export PATH=${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:${PATH}
+    export EPICS_CA_ADDR_LIST=analyzer
+fi
+
 # i usually know what my name is
 DEFAULT_USER='jessie'
 # lines of history to maintain in memory
