@@ -36,3 +36,5 @@
 	default = simple
 [log]
 	date = local
+[pull]
+	rebase = false
