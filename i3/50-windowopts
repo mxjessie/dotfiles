@@ -10,14 +10,19 @@ for_window [class="furcadia.exe"] floating enable
 for_window [class="Furcadia.exe"] floating enable
 for_window [class="furc_on.exe"] floating enable
 for_window [instance="keepassx"] floating enable
-for_window [class="MPlayer"] floating enable
-for_window [class="mpv"] floating enable
+for_window [class="MPlayer"] floating enable, sticky enable
+for_window [class="mpv"] floating enable, sticky enable
 for_window [class="obs"] floating enable
 for_window [instance="speedcrunch"] floating enable, border normal
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable, border normal
 for_window [class="Thunderbird" window_role="filterlist"] floating enable, border normal
 for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
 #for_window [class="x-terminal-emulator" name='Terminator Preferences'] floating enable
+
+# tweaks for steam and steam streaming apps
+for_window [class="Steam"] floating enable, border normal
+for_window [class="streaming-client"] floating enable, border normal
+for_window [class="net-runelite-client-RuneLite"] floating enable, border normal
 
 #rename workspace 8 to 8: social
 assign [class="TelegramDesktop"] 8
