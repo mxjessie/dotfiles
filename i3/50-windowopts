@@ -21,8 +21,8 @@ for_window [class="Tickr"] sticky enable, floating enable, border pixel 0
 
 # tweaks for steam and steam streaming apps
 for_window [class="Steam"] floating enable, border normal
-for_window [class="streaming_client"] floating enable, border normal
-for_window [class="net-runelite-client-RuneLite"] floating enable, border normal
+for_window [class="streaming_client"] fullscreen, border pixel 0
+for_window [class="net-runelite-client-RuneLite"] fullscreen
 for_window [class="net-runelite-launcher-Launcher"] floating enable, border normal
 
 #rename workspace 8 to 8: social
